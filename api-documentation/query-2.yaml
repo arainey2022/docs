@@ -1,0 +1,69 @@
+openapi: 3.0.0
+info:
+  title: AskAI API
+  version: "1.1"
+servers:
+  - url: https://myaskai.com/api/1.1/wf
+paths:
+  /ask-ai-query:
+    post:
+      summary: Ask a question to AskAI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: AskAI ID
+                api_key:
+                  type: string
+                  description: AskAI API Key
+                query:
+                  type: string
+                  description: Question to AskAI
+              required:
+                - id
+                - api_key
+                - query
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  answer:
+                    type: string
+                    description: Answer from AskAI
+                  references:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        content:
+                          type: string
+                          description: Content of the reference
+                        link:
+                          type: string
+                          format: uri
+                          description: Link to the reference
+                        score:
+                          type: number
+                          format: float
+                          description: Score of the reference
+                        title:
+                          type: string
+                          description: Title of the reference
+                  suggestedQuestions:
+                    type: array
+                    items:
+                      type: string
+                    description: Array of suggested follow-up questions
+                  unknown_answer:
+                    type: string
+                    enum: [no, yes]
+                    description: Indicates if the answer is known or not

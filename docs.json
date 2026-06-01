@@ -1,53 +1,325 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "My AskAI",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#EA3609",
+    "light": "#EA3609",
+    "dark": "#EA3609"
   },
-  "favicon": "/favicon.svg",
+  "fonts": {
+    "family": "Inter"
+  },
+  "favicon": "/favicon.png",
   "navigation": {
     "pages": [
       {
-        "group": "Getting Started",
+        "group": "Welcome",
         "pages": [
-          "index",
-          "quickstart"
+          "index"
+        ]
+      },
+      {
+        "group": "Start here",
+        "pages": [
+          {
+            "group": "What is an AI Customer Support Agent?",
+            "pages": [
+              "start-here/what-is-an-ai-customer-support-agent",
+              "start-here/what-is-an-ai-customer-support-agent/what-are-the-benefits-of-using-my-askai",
+              "start-here/what-is-an-ai-customer-support-agent/who-is-this-for"
+            ]
+          },
+          "start-here/create-your-ai-customer-service-agent",
+          "start-here/onboarding",
+          "start-here/testing",
+          {
+            "group": "Add your AI agent to your website",
+            "pages": [
+              "start-here/add-your-ai-agent-to-your-website",
+              "start-here/add-your-ai-agent-to-your-website/wordpress",
+              "start-here/add-your-ai-agent-to-your-website/shopify",
+              "start-here/add-your-ai-agent-to-your-website/zendesk"
+            ]
+          },
+          "start-here/full-product-demo",
+          "start-here/video-tutorials",
+          "start-here/reviews",
+          "start-here/support"
+        ]
+      },
+      {
+        "group": "Features",
+        "pages": [
+          "features/ai-answers-on-your-content",
+          "features/human-escalation",
+          "features/escalation-data-collection",
+          {
+            "group": "Channels",
+            "pages": [
+              "features/channels",
+              "features/channels/zapier",
+              {
+                "group": "Zendesk",
+                "pages": [
+                  "features/channels/zendesk",
+                  "features/channels/zendesk/zendesk-messaging",
+                  "features/channels/zendesk/zendesk-tickets",
+                  "features/channels/zendesk/zendesk-tagging",
+                  "features/channels/zendesk/zendesk-playbooks"
+                ]
+              },
+              {
+                "group": "Intercom",
+                "pages": [
+                  "features/channels/intercom",
+                  "features/channels/intercom/intercom-tagging",
+                  "features/channels/intercom/intercom-live-translation",
+                  "features/channels/intercom/intercom-playbooks",
+                  "features/channels/intercom/human-escalation-workflows"
+                ]
+              },
+              {
+                "group": "Freshchat",
+                "pages": [
+                  "features/channels/freshchat",
+                  "features/channels/freshchat/freshchat-tagging"
+                ]
+              },
+              {
+                "group": "Freshdesk",
+                "pages": [
+                  "features/channels/freshdesk",
+                  "features/channels/freshdesk/freshdesk-tagging"
+                ]
+              },
+              "features/channels/gorgias",
+              {
+                "group": "HubSpot",
+                "pages": [
+                  "features/channels/hubspot",
+                  "features/channels/hubspot/hubspot-playbooks"
+                ]
+              },
+              "features/channels/chrome-extension",
+              "features/channels/zoho-salesiq",
+              "features/channels/live-chat-channels-feature-comparison",
+              "features/channels/microsoft-teams",
+              "features/channels/slack"
+            ]
+          },
+          {
+            "group": "Connections",
+            "pages": [
+              "features/connections",
+              "features/connections/authorizations"
+            ]
+          },
+          "features/shopify",
+          "features/connecting-to-internal-systems-via-apis",
+          {
+            "group": "User Data API",
+            "pages": [
+              "features/user-data-api",
+              "features/user-data-api/user-data-api-setup"
+            ]
+          },
+          "features/ai-actions-tools",
+          {
+            "group": "Tasks",
+            "pages": [
+              "features/tasks",
+              "features/tasks/task-use-cases",
+              "features/tasks/task-end-to-end-examples"
+            ]
+          },
+          "features/self-learning",
+          {
+            "group": "Improve",
+            "pages": [
+              "features/improve",
+              "features/improve/knowledge-gaps",
+              "features/improve/guidance",
+              "features/improve/custom-answers",
+              "features/improve/test",
+              "features/improve/content-usage",
+              "features/improve/inspect-and-logs"
+            ]
+          },
+          "features/image-reading",
+          "features/echo-agent",
+          "features/multibrand",
+          "features/private-internal-mode",
+          "features/file-uploads",
+          "features/adding-and-syncing-your-website-content",
+          "features/training-on-historic-tickets",
+          {
+            "group": "Insights",
+            "pages": [
+              "features/insights",
+              "features/insights/conversation-insight-notifications"
+            ]
+          },
+          "features/team-access",
+          "features/spam-filters",
+          "features/email-assistant",
+          "features/lead-email-capture",
+          "features/customization",
+          "features/site-search",
+          "features/conversation-ratings-csat",
+          "features/languages-and-localization",
+          "features/starter-actions",
+          "features/remove-branding"
+        ]
+      },
+      {
+        "group": "Security + Privacy",
+        "pages": [
+          {
+            "group": "Security",
+            "pages": [
+              "security-+-privacy/security",
+              "security-+-privacy/security/soc-2"
+            ]
+          },
+          {
+            "group": "Privacy",
+            "pages": [
+              "security-+-privacy/privacy",
+              "security-+-privacy/privacy/your-content",
+              "security-+-privacy/privacy/your-data",
+              "security-+-privacy/privacy/openai",
+              {
+                "group": "Regulations",
+                "pages": [
+                  "security-+-privacy/privacy/regulations",
+                  "security-+-privacy/privacy/regulations/gdpr-compliance",
+                  "security-+-privacy/privacy/regulations/hipaa"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Account Management",
+        "pages": [
+          "account-management/pricing-+-plans",
+          {
+            "group": "Limits",
+            "pages": [
+              "account-management/limits",
+              "account-management/limits/exceeding-limits",
+              "account-management/limits/conversations"
+            ]
+          },
+          {
+            "group": "Your profile",
+            "pages": [
+              "account-management/your-profile",
+              "account-management/your-profile/changing-your-email",
+              "account-management/your-profile/close-your-account"
+            ]
+          },
+          {
+            "group": "Billing",
+            "pages": [
+              "account-management/billing",
+              "account-management/billing/change-plan",
+              "account-management/billing/update-payment-card",
+              "account-management/billing/download-an-invoice",
+              "account-management/billing/discounts",
+              "account-management/billing/refunds",
+              "account-management/billing/usage-costs",
+              "account-management/billing/tax",
+              "account-management/billing/cancel-subscription"
+            ]
+          },
+          {
+            "group": "User access",
+            "pages": [
+              "account-management/user-access",
+              "account-management/user-access/setting-a-password-for-your-account",
+              "account-management/user-access/do-you-have-2fa-or-mfa-to-login-to-my-askai",
+              "account-management/user-access/reset-login-password"
+            ]
+          },
+          "account-management/affiliate-program",
+          "account-management/reselling-+-whitelabelling"
+        ]
+      },
+      {
+        "group": "Troubleshooting",
+        "pages": [
+          "troubleshooting/how-to-debug-an-ai-answer",
+          "troubleshooting/slow-responses",
+          "troubleshooting/chat-bubble-not-visible",
+          "troubleshooting/why-cant-it-answer",
+          "troubleshooting/login",
+          "troubleshooting/website-not-added",
+          "troubleshooting/issue-connecting-your-live-chat-widget",
+          "troubleshooting/oops-there-has-been-an-error",
+          "troubleshooting/i-cant-see-any-billing-information-for-my-account"
+        ]
+      },
+      {
+        "group": "FAQ",
+        "pages": [
+          {
+            "group": "General",
+            "pages": [
+              "faq/general",
+              "faq/general/how-do-i-make-the-ai-agent-more-human",
+              "faq/general/how-can-i-test-my-ai-agent-without-it-responding-to-customers",
+              "faq/general/can-i-use-the-ai-agent-within-a-mobile-app",
+              "faq/general/can-i-add-macros-canned-or-stock-responses-to-my-ai-agent",
+              "faq/general/can-i-have-multiple-ai-agents-multiple-brands-or-multiple-knowledge-bases",
+              "faq/general/can-i-route-tickets-to-different-agents",
+              "faq/general/can-i-give-my-agent-a-personality-adjust-the-tone-or-customize-the-prompt",
+              "faq/general/does-it-get-smarter-the-more-conversations-it-has",
+              "faq/general/which-messages-will-my-ai-agent-respond-to",
+              "faq/general/what-are-your-social-accounts",
+              "faq/general/what-is-the-difference-between-my-askai-and-my-askai-classic",
+              "faq/general/will-it-answer-questions-about-competitors-products",
+              "faq/general/what-if-it-cant-answer",
+              "faq/general/will-it-make-things-up",
+              "faq/general/feedback-feature-requests-and-suggestions",
+              "faq/general/answer-streaming",
+              "faq/general/temperature",
+              "faq/general/my-askai-vs-fine-tuning",
+              "faq/general/my-askai-vs-chatgpt",
+              "faq/general/how-can-i-test-the-accuracy-of-my-ai-agents-answers",
+              "faq/general/large-language-models-llms",
+              "faq/general/can-i-use-my-own-openai-assistant-or-custom-gpt",
+              "faq/general/do-you-offer-a-sla-or-uptime-guarantee",
+              "faq/general/do-you-have-any-rate-limits-for-conversations-for-your-ai-agent",
+              "faq/general/does-the-ai-agent-use-the-ticket-or-conversation-history-when-responding",
+              "faq/general/how-do-you-manage-spam-tickets-chats-or-conversations",
+              "faq/general/how-does-it-work"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "API Documentation",
+        "pages": [
+          "api-documentation/api-docs-introduction",
+          "api-documentation/query-api",
+          "api-documentation/chat-api",
+          "api-documentation/user-data-api"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/wordmark.png",
+    "dark": "/logo/wordmark-white.png"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Create free AI agent",
+      "href": "https://myaskai.com/"
     }
   },
   "contextual": {
@@ -64,9 +336,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://twitter.com/usemyaskai",
+      "linkedin": "https://www.linkedin.com/company/myaskai/",
+      "youtube": "https://www.youtube.com/@usemyaskai"
     }
   }
 }

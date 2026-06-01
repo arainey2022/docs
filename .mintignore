@@ -5,3 +5,7 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Migration tooling (not docs content)
+scripts/
+MIGRATION_REPORT.md

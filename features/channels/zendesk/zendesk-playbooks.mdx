@@ -1,0 +1,27 @@
+---
+title: "Zendesk Playbooks"
+description: "Here you'll find how to set up specific use cases for your Zendesk AI agent"
+---
+
+### Only use AI agent for out-of-hours replies in Zendesk Tickets
+
+To set your Zendesk AI agent to only reply to tickets out-of-hours:
+
+1. Create a [schedule](https://support.zendesk.com/hc/en-us/articles/4408842938522-Setting-your-schedule-with-business-hours-and-holidays) in Zendesk for your business hours
+2. Edit the My AskAI trigger in Zendesk "Notify My AskAI..."
+3. Add a new condition to the list "Meet ALL of the following conditions"
+4. New conditions: Ticket within business hours > is > No
+
+<Frame><img src="/images/image-2-1-1-1-1-1.png" alt=""  /></Frame>
+
+This means that the AI agent will only be notified about tickets outside of business hours.
+
+### How to collect email on handover/escalation in Zendesk Messaging
+
+When a Zendesk Messaging conversation has been handed over or escalated to an agent, you will likely want to collect the email address of the user or customer if they were a visitor.
+
+[Follow these steps to collect any email or data on a customer at escalation](/features/escalation-data-collection) and specifically:
+
+Enable email collection by clicking "Use both verified and unverified emails" in the Zendesk Messaging settings in Zendesk (accessible via the Admin panel and going to **Messaging > Messaging Settings**).
+
+<Frame><img src="/images/image-1-1.png" alt="" width="563"  /></Frame>

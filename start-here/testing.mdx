@@ -1,0 +1,69 @@
+---
+title: "Testing"
+description: "How can you test your AI agent on your business in a controlled way?"
+---
+
+Moving to AI customer service is a big deal for most businesses, and you don't want it to have a negative impact on your customers, so being able to control the rollout is important.
+
+Here's how we would recommend testing and rolling out your AI agent:
+
+### 1. Use batch-testing initially to get comfortable with replies
+
+[Our batch-testing feature](/features/improve/test) will import a sample of historic tickets from your helpdesk when you sign up (you can't import historic tickets after signing up) and demonstrate how your AI agent would have responded to them, had it had the opportunity.
+
+You can add additional sample questions to this batch-test set and re-run over all questions to simulate its responses.
+
+For each question you will be able to [drill down and see why it answered in the way that it did](/troubleshooting/how-to-debug-an-ai-answer) and what knowledge it was using to answer.
+
+### 2. Start with our internal notes and co-pilot modes to keep a "human-in-the-loop"
+
+#### Internal notes
+
+"Internal notes mode" means your AI agent will generate a reply as if it was sending it in a reply to a customer's message or ticket, but (critically), it will only send it as an internal note on your helpdesk inbox, so the customer won't see it, only your human agent will.
+
+This gives you the opportunity to review the replies, make updates to tone via guidance, add additional knowledge and identify areas for improvement.
+
+It also means your agents will get a productivity boost as they won't have to go searching for any documentation, links or data when they are responding.
+
+By default, all integrations will start off in this mode.
+
+#### Co-pilot
+
+Our "[Co-pilot](/features/channels/chrome-extension)" mode again allows your human agents to use your AI agent without your customers seeing or knowing.
+
+By clicking a button in your helpdesk inbox the AI agent will read through the conversation and generate a response that it will paste into the text reply field for your (human) agent to review and edit before they send.
+
+<Info>
+Note that while this is a useful way to get started, it won't be completely representative of real-world performance as people sometimes speak with AI agents differently to how they speak to humans (less personable for example) and also the AI agent can ask follow on or clarifying questions to better understand when it can't answer.&#x20;
+</Info>
+
+### 3. Review your AI agent's replies
+
+There are a few ways you can review your AI agent replies:
+
+1. As your AI agent is replying to messages in notes mode you will be able to see how it is responding in your helpdesk directly.
+2. You can also review AI agent responses by going to [Inspect & Logs](/features/improve/inspect-and-logs) in the Improve section of your dashboard.
+3. You can review AI agent responses, sorted by topic in [Insights](/features/insights), so you can focus on those with lower AI CSAT or AI resolution scores.
+
+As you review these responses, ensure that with each response, if it is unsatisfactory, you:
+
+* Add or update and refresh your help articles
+* Add a [custom answers](/features/improve/custom-answers)
+* Add or update your [guidance](/features/improve/guidance)
+* Identify whether an [API call](/features/connecting-to-internal-systems-via-apis) would help improve the response
+
+It may be worth creating a basic QA spreadsheet or process to track performance.
+
+<Info>
+**Tip**: It is often useful to specify a target goal for AI resolution or a QA score for when you'd be happy to turn on direct replies to customer or users.
+</Info>
+
+### 4. Turn on AI agent direct replies and monitor
+
+The true test of an AI agent is how it behaves and how your customers or users react to it when it is interacting with them directly and the only way to find this out is through turning it on.
+
+That said, if you want to minimize risk further here there are a few things you can do:
+
+* Turn the AI agent on/off at certain times by enabling or disabling AI replies
+* Using our AI tagging feature to determine which types of tickets you want the AI agent to respond to
+* Setting up triggers or rules to ensure the AI agent only replies to certain categories of customer or individual brands

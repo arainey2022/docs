@@ -1,0 +1,219 @@
+---
+title: "Authorizations"
+description: "Some Connections require slightly more information than others to set up, here is where you can find all details of how to connect your knowledge source."
+---
+
+### Google Drive
+
+To authorize your Google Drive connection, you just need to log into your Google Drive account when asked.
+
+<Frame><img src="/images/image-316.png" alt=""  /></Frame>
+
+You will see this message after you have selected your account telling you that the app isn't verified, this is because we are waiting on Google to approve our app - to continue, click the "Advanced" button in the bottom left and then "Go to myaskai.com":
+
+<Frame><img src="/images/image-61.png" alt="" width="563"  /></Frame>
+
+<Info>
+If you are using a Google workplace account, you may need your admin to grant access to 3rd party apps to connect.
+</Info>
+
+#### My Google Drive connection is blocked (for a Google Workspace account)
+
+If you are the Google Workspace admin
+
+You can approve (or unblock) the app like this:
+
+1. Go to [admin.google.com](http://admin.google.com)
+2. Security → Access and data control
+3. Open API controls
+4. Click App access control
+5. Find the app: [`692421788097-i80n4hu6c7pbmhhi366ltudlo43i7kpi.apps.googleusercontent.com`](http://692421788097-i80n4hu6c7pbmhhi366ltudlo43i7kpi.apps.googleusercontent.com)
+6. Change the status for the app to: **Trusted** (full access)
+7. Save changes
+
+For further info: [https://support.google.com/a/answer/7281227?hl=en-IN](https://support.google.com/a/answer/7281227?hl=en-IN)
+
+### OneDrive
+
+To authorize your OneDrive connections, you just need to log into your Microsoft account when asked, then click confirm to grant permission.
+
+<Frame><img src="/images/image-317.png" alt=""  /></Frame>
+
+#### [​](https://docs.carbon.ai/connectors/onedrive#microsoft-admin-approval-2)Microsoft Admin Approval <a href="#microsoft-admin-approval-2" id="microsoft-admin-approval-2"></a>
+
+To allow My AskAI to access your Microsoft applications (OneDrive and SharePoints), users might need to request admin consent approval.
+
+Here’s a step-by-step guide:
+
+#### [​](https://docs.carbon.ai/connectors/onedrive#prerequisites-2)Prerequisites <a href="#prerequisites-2" id="prerequisites-2"></a>
+
+Before you begin, ensure you have:
+
+* Gone through My AskAI's managed OAuth flow and submitted the admin consent request (see screenshot below):
+
+<Frame><img src="/images/image-542.png" alt="" width="375"  /></Frame>
+
+* An administrator role or designated reviewer role to review admin consent requests
+
+#### [​](https://docs.carbon.ai/connectors/onedrive#approve-the-request)Approve the Request <a href="#approve-the-request" id="approve-the-request"></a>
+
+1. Sign in to the Microsoft Entra admin center as at least a Cloud Application Administrator who is a designated reviewer.
+2. Navigate to **Identity** > **Applications** > **Enterprise applications**.
+3. Under **Activity**, select **Admin consent requests**.
+4. Select the **My Pending** tab to view and act on the pending requests.
+5. From the list, select the My AskAI application that is being requested.
+6. Review the request details:
+   * Select **Review permissions and consent** to see what permissions are being requested by My AskAI.
+   * Select the **App details** tab to view the application details.
+   * Select the **Requested by** tab to see who is requesting access and why.
+7. **Approve the request** to grant admin consent to allow My AskAI to access your Microsoft application. All requestors will be notified that their request for access is granted. This allows all users in your tenant to access My AskAI unless otherwise restricted with user assignment.
+
+#### Do You Have the Right Permissions?
+
+If you are unable to consent to the approval request under **My Pending** because the admin consent flow has not been activated, then you will need **Global Administrator** permissions. Once you are a **Global Administrator**, you can set up the admin consent flow or consent directly via My AskAI's managed OAuth flow.
+
+![](https://imagedelivery.net/_sHUUMiZokZ59YDFOZEZTw/d45b40bc-423a-4f77-3dc5-f93f2633fa00/public)
+
+### Dropbox
+
+To authorize your Dropbox connection, you just need to log into your Dropbox account when asked.
+
+<Frame><img src="/images/image-543.png" alt=""  /></Frame>
+
+### Intercom
+
+<Warning>
+Your Intercom help center must be published and turned on to use this feature
+</Warning>
+
+To authorize your Intercom connection, you just need to log in and authorize your Intercom account when asked.
+
+<Frame><img src="/images/image-50.png" alt=""  /></Frame>
+
+### Zendesk
+
+To authorize your Zendesk connection, you just need to provide the Zendesk sub-domain of the account you want to connect when asked, then log in with your Zendesk account details to approve.
+
+<Frame><img src="/images/image-323.png" alt="" width="375"  /></Frame>
+
+<Frame><img src="/images/image-49.png" alt=""  /></Frame>
+
+### Freshdesk
+
+<Warning>
+If you are unable to connect to Freshdesk, first check whether you have Admin permissions on your Freshdesk account as it will be needed to connect to your knowledgebase.
+
+The role type you need to connect i&#x73;**`Account Administrator`**
+</Warning>
+
+To authorize your Freshdesk connection, you just need to provide the Freshdesk domain and API key you want to connect to when asked.
+
+<Info>
+When adding your Freshdesk domain, ensure it is your original Freshdesk domain e.g. yourdomain.freshdesk.com, not any custom domains you may now use.
+</Info>
+
+<Frame><img src="/images/image-328.png" alt="" width="360"  /></Frame>
+
+To find your API key:
+
+1. Log in to your Freshdesk Support Portal
+2. Click on your profile picture on the top right corner of your portal
+
+<Frame><img src="/images/image-329.png" alt=""  /></Frame>
+
+3. Go to Profile settings Page
+
+<Frame><img src="/images/image-330.png" alt=""  /></Frame>
+
+4. Your API key will be available below the change password section to your right.
+
+<Frame><img src="/images/image-331.png" alt=""  /></Frame>
+
+For more information, please refer to [this solution article](https://docs.carbon.ai/connectors/'https://support.freshdesk.com/en/support/solutions/articles/215517') from Freshdesk.
+
+### Notion
+
+To authorize your Notion connection, you just need to log in and authorize your Notion account when asked and grant permission.
+
+<Frame><img src="/images/image-544.png" alt="" width="563"  /></Frame>
+
+### SharePoint
+
+To authorize your SharePoint connection enter your SharePoint `tenant` and `site name`.&#x20;
+
+For example, if the SharePoint site URL is: `https://mikemmyaskai.sharepoint.com/sites/myaskai-dev`
+
+`mikemyaskai` is the tenant and `myaskai-dev` is the site name.
+
+<Frame><img src="/images/image-171.png" alt=""  /></Frame>
+
+Log into your Microsoft SharePoint account.
+
+<Frame><img src="https://i.ibb.co/86FPknL/Screen-Shot-2023-08-31-at-4-41-48-PM.png" alt=""  /></Frame>
+
+Click the “Confirm” button to grant us permission to access your SharePoint.
+
+<Frame><img src="https://i.ibb.co/x6L7knS/Screen-Shot-2023-10-24-at-11-45-27-AM.png" alt=""  /></Frame>
+
+Once clicking “Confirm”, you will be taken through a flow to grant permissions.
+
+<Frame><img src="/images/image-548.png" alt="" width="375"  /></Frame>
+
+<Info>
+You may get a message like the below, if you are using a workplace Sharepoint, if so you will need to get your company admin to grant access to 3rd party apps in order to connect, you can [read more on user consent and permissions here](https://learn.microsoft.com/en-us/microsoft-365/admin/misc/user-consent?view=o365-worldwide).
+</Info>
+
+<Info>
+Note, the app approval request will be for My AskAI.
+</Info>
+
+<Frame><img src="/images/image-547.png" alt="" width="375"  /></Frame>
+
+#### Approving the SharePoint admin request
+
+1. Sign in to the Microsoft Entra admin center as at least a Cloud Application Administrator who is a designated reviewer.
+2. Navigate to **Identity** > **Applications** > **Enterprise applications**.
+3. Under **Activity**, select **Admin consent requests**.
+4. Select the **My Pending** tab to view and act on the pending requests.
+5. From the list, select the Carbon application that is being requested.
+6. Review the request details:
+   * Select **Review permissions and consent** to see what permissions are being requested by Carbon.
+   * Select the **App details** tab to view the application details.
+   * Select the **Requested by** tab to see who is requesting access and why.
+7. **Approve the request** to grant admin consent to allow My AskAI to access your Microsoft application. All requestors will be notified that their request for access is granted. This allows all users in your tenant to access My AskAI unless otherwise restricted with user assignment.
+
+<Info>
+If you are unable to consent to the approval request under **My Pending** because the admin consent flow has not been activated, then you will need **Global Administrator** permissions. Once you are a **Global Administrator**, you can set up the admin consent flow or consent directly via Carbon’s managed OAuth flow.
+</Info>
+
+<Frame><img src="/images/image-484.png" alt=""  /></Frame>
+
+### Confluence
+
+To authorize your Confluence connection, you just need to provide the Confluence sub-domain of the workspace you want to connect to when asked, then log in with your Confluence account details to approve.
+
+When you connect Confluence, the content that will be synced will be the same content that the user profile (used to authenticate with Confluence) has access to (i.e. all available content, you can't choose specific content to add).&#x20;
+
+If you want to choose specific content to add from Confluence you can create a separate, specific account on Confluence that has access to certain 'spaces' to make sure that only certain content is synced.
+
+For example, if the Confluence workspace URL is `https://myaskai.confluence.com`, then`myaskai` will be the subdomain.
+
+<Frame><img src="/images/image-326.png" alt="" width="301"  /></Frame>
+
+<Frame><img src="/images/image-546.png" alt=""  /></Frame>
+
+### Salesforce
+
+<Info>
+All `Published` articles under a single Salesforce knowledgebase will be synced. Any Draft article won’t be synced.
+</Info>
+
+To authorize your Salesforce connection, you just need to provide the Salesforce domain of the account you want to connect to when asked, then log in with your Salesforce account details to approve.
+
+For example, if the Salesforce account URL is `https://myaskai.my.salesforce.com`, then`myaskai` will be the domain.
+
+<Frame><img src="/images/image-364.png" alt="" width="242"  /></Frame>
+
+<Frame><img src="/images/image-546.png" alt=""  /></Frame>
+
+<Frame><img src="/images/image-545.png" alt=""  /></Frame>

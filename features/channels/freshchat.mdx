@@ -1,0 +1,265 @@
+---
+title: "Freshchat"
+description: "Connect your AI support agent to your Freshchat workspace and existing Freshchat live chat widget (Conversations Widget) on your website."
+---
+
+You can now integrate your AI support agent directly into Freshchat for a seamless AI experience.
+
+<Check>
+The Freshchat integration is available on all paid plans, [see pricing](https://myaskai.com/pricing).
+</Check>
+
+### What are the benefits of using My AskAI within Freshchat?
+
+There are several reasons why you should use your My AskAI within Freshchat:
+
+* You can add more knowledge to your AI agent in addition to your website and Freshdesk help center by using our [connections](/features/connections), live data or [file uploads](/features/file-uploads).
+* You don't have to add any code to your site to get your AI agent live, just connect our app and you're ready to go.
+* As well as an AI agent, you get all our other features like [Improve,](/features/improve) [Insights](/features/insights), [Email Assistant](/features/email-assistant), [Site Search](/features/site-search), [Private (Internal) mode](/features/private-internal-mode), [Integrations with Slack](/features/channels) and more.&#x20;
+* While Freshchat has its own AI agent (called "FreddyAI"), it can be more expensive, up to twice the price of My AskAI per conversation (we also think ours is smarter, but we'll let you be the judge!)
+
+### How to use your AI agent within Freshchat
+
+<Frame>
+<iframe
+  width="100%"
+  height="400"
+  src="https://www.youtube.com/embed/m1YPYZcB8Jw"
+  title="Embedded video"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+></iframe>
+</Frame>
+
+### How to connect your AI agent to Freshchat
+
+<Warning>
+Ensure that you have turned off Freddy before completing these steps.
+</Warning>
+
+1. Login to your Dashboard and go to _**Channels**_.&#x20;
+2. Once enabled you will see "Add to helpdesk", click on the Freshworks icon and select Freshchat.
+3. To connect your Freshchat account enter your API key and Chat URL. To find these in your Freshchat dashboard go to:\
+   \
+   &#xNAN;_**Admin Settings > Marketplace and Integrations > API Settings > API details for chat > "Your API key" OR "Your chat URL"**_\
+   \
+   Once you have both of these values, enter them into their respective fields and press the "**Connect your Freshchat account**" button.
+
+<Info>
+If you need to create an API key you can do so by [following the instructions here](https://support.freshchat.com/support/solutions/articles/50000000011).
+</Info>
+
+4. When connected the button will change to say "**Freshchat account connected**".
+5. You now need to create a new webhook, to do this in your Freshchat dashboard go to:\
+   \
+   &#xNAN;_**Admin Settings > Marketplace and Integrations > Conversation Webhooks**_\
+   \
+   Then toggle the webhook from Disabled to **Enabled.**
+
+<Frame><img src="/images/screenshot-2024-12-12-153818.png" alt=""  /></Frame>
+
+5. Once enabled, copy the webhook address from My AskAI and paste it into Freshchat's webhook field, then enter your email for failure notification alerts and click save.\
+   \
+   Webhook address: [https://ask.myaskai.com/projects/webhooks/freshchat](https://ask.myaskai.com/projects/webhooks/freshchat)
+
+<Frame><img src="/images/image-68.png" alt=""  /></Frame>
+
+<Info>
+You do not need to do anything with the authentication header key
+</Info>
+
+6. To confirm the webhook has been set up correctly, send a test message to your Freshchat widget.
+
+<Frame><img src="/images/screenshot-2024-12-13-141002.png" alt=""  /></Frame>
+
+7. This message will be confirmed as received when you see the _"Webhook successfully setup"_ message appear in your My AskAI setup page.
+8. Your AI agent is now connected to Freshchat and will be [providing "note" responses](/features/channels/freshchat#how-to-draft-ai-conversational-replies-to-users-without-sending-them) (not directly to customers).
+
+### How can I use my AI support agent within Freshchat?
+
+There are 3 ways you can use your AI agent within Freshchat:
+
+1. [_As a full conversational AI agent_](/features/channels/freshchat#how-to-set-up-an-ai-powered-chatbot-within-intercom-fully-conversational-support)_._
+2. [To provide "Note" replies to all messages.](/features/channels/freshchat#how-to-draft-ai-conversational-replies-to-users-without-sending-them-in-freshchat)
+3. [_As a co-pilot for your human agents to help them improve their efficiency_](/features/channels/chrome-extension)_._
+
+### How to set up an AI-powered support agent within Freshchat (Fully conversational support)
+
+1. [Connect your AI agent to Freshchat](/features/channels/freshchat#how-to-connect-your-ai-chatbot-to-intercom)
+2. Toggle conversational replies "on" by going to your Dashboard then _**Channels > Add to helpdesk > Freshworks > Freshchat**_ clicking the "Direct replies" button.
+3. That's it! Your Freshchat will now automatically respond to user queries using your AI agent's knowledge.
+
+<Info>
+New conversations start (and are transferred back to the AI agent) after:
+
+_A conversation is resolved AND the “threading interval” has passed (which can be customised per Topic)_
+
+<img src="/images/image-55-1.png" alt="" data-size="original" />
+</Info>
+
+### How to draft AI conversational replies to users, without sending them in Freshchat
+
+You can set the agent to automatically create AI note responses for you to use instead of replying directly to the user, to do this:
+
+<Frame><img src="/images/image-481.png" alt=""  /></Frame>
+
+1. [Connect your AI support agent to Freshchat](/features/channels/freshchat#how-to-connect-your-ai-chatbot-to-intercom)
+2. Toggle note replies "on" by going to your Dashboard then _**Channels > Add to helpdesk > Freshworks > Freshchat**_ clicking the "Draft 'note' replies" toggle.
+3. That's it, now when someone talks with your Freshchat you will see the AI response appear as a note you can use to help with your reply.
+
+### How does human escalation work when using the Freshchat integration?
+
+<Info>
+To see how the human handover in Freshchat works, check out this demo: [https://app.supademo.com/demo/cm5p689oo094gpelfx61g43ug?utm\_source=link](https://app.supademo.com/demo/cm5p689oo094gpelfx61g43ug?utm_source=link)
+</Info>
+
+If, at any time, the user wishes to be passed over to a person to continue the conversation, all they need to do is say so, saying "Talk to a person" (or similar words to that effect).
+
+Once the conversation is passed over to the human, the AI will not respond again until the agent hands back control to the AI.
+
+When the AI agent cannot answer a question, it will also prompt the user to type "Talk to a person" to make it obvious they can speak to a person.
+
+As part of the escalation, the AI agent will summarize the conversation so the agent can pick up where the user left off so there is no repetition or frustration.
+
+### How do I add conversation properties so I know what the AI Chat Status of a Freshchat conversation is?
+
+To add AI statuses of to a Freshchat conversation:
+
+1. Create a conversation property within Freshchat (we can’t create these automatically, unfortunately) by going to **Freshchat Admin Settings > Configuration and Workflow > Conversation Properties**
+
+<Frame><img src="/images/image-8.png" alt="" width="563"  /></Frame>
+
+2. Create a new **Dropdown** property called: **AI Chat Status**, and ensure the "Internal name" is: `ai_chat_status` . \
+   \
+   You do not need to add any "choices".
+
+<Frame><img src="/images/image-1-1-1-1-1-1-1-1-1.png" alt="" width="563"  /></Frame>
+
+3. Now in your conversation inbox you will see your new AI Chat Status property.
+
+<Frame><img src="/images/image-2-1-1-1-1.png" alt="" width="563"  /></Frame>
+
+4. Your new AI Chat Status will always be **one** of:
+   * `ai-agent-replied`: used when the AI agent has sent any reply
+   * `human-handover-requested`: used when the AI agent wants to escalate a chat to a human agent
+   * `ai-agent-tag-blocked`: used when a chat is about a topic/tag that has been blocked
+
+### How do I know what the Freshchat AI agent has replied to and what has been handed to a human agent?
+
+When a ticket is replied to by your AI agent in Freshchat  you will see the AI response in the conversation thread.
+
+Additionally ([if you have created your AI Chat Status for Freshchat](/features/channels/freshchat#how-do-i-add-conversation-properties-so-i-know-what-the-ai-chat-status-of-a-freshchat-conversation-i)) you will see the AI Chat Status tag updated to `ai-agent-replied`  for the thread.
+
+When a conversation is replied to by a customer requesting a person (if they need more help for instance) then an internal note is also added to the ticket and ([if you have created your AI Chat Status for Freshchat](/features/channels/freshchat#how-do-i-add-conversation-properties-so-i-know-what-the-ai-chat-status-of-a-freshchat-conversation-i)) the AI Chat Status is updated to `human-handover-requested`.
+
+Assuming you have [created your AI Chat Status](/features/channels/freshchat#how-do-i-add-conversation-properties-so-i-know-what-the-ai-chat-status-of-a-freshchat-conversation-i) you can then use the `ai-agent-replied` and `human-handover-requested` conversation properties to create custom views in Freshchat to manage the escalated tickets or review AI agent responses.
+
+Create a new view and filter using the AI Agent status field: `ai-agent-replied` or `human-handover-requested` or `ai-agent-tag-blocked` .
+
+<Frame><img src="/images/image-3-1-1-1.png" alt="" width="563"  /></Frame>
+
+### How can I take control from or give control to the AI agent in Freshchat?
+
+You can give control or take back control from the AI at any time, here's how:
+
+#### To take control of a conversation
+
+Just reply to any open conversation as an admin/agent and the conversation's control will be taken from the AI agent.
+
+### How can I add my agent as part of a triaged chatbot in Freshchat?
+
+1. [Connect your agent to Freshchat](/features/channels/freshchat#how-to-connect-your-ai-chatbot-to-intercom)
+2. Turn on the toggle switch for Chatbot/Triage settings
+3. Decide on a trigger phrase to use for your AI chatbot escalate button, type it into the field below the toggle switch and include this as the text in a button in your chatbot (example chatbot flow below for "Speak to AI" as the trigger phrase).
+
+<Danger>
+This phrase must _**exactly**_ match the pre-defined button you are going to use in your chatbot message.
+</Danger>
+
+<Frame><img src="/images/image-52-1.png" alt=""  /></Frame>
+
+<Frame><img src="/images/image-53-1.png" alt=""  /></Frame>
+
+4. Ensure you end the AI chatbot with "Make available for assignment".
+
+<Frame><img src="/images/image-54-1.png" alt=""  /></Frame>
+
+5. Your AI agent will now only begin responding after the "Speak to AI" button has been pressed.
+
+### I have multiple brands, users or email accounts in Freshchat, can I have the AI agent only respond to one of them (or specific ones)?
+
+Yes, you can set your AI agent up so it only responds to specific conversations or brands in Freshchat.
+
+By default your AI agent will reply to all inbound conversations.
+
+But if you want it to reply to only certain email addresses e.g. support@company.com and not vip-support@company.com then you can use workflows to triage tickets.
+
+This will ensure it only replies to these accounts.
+
+### How can I stop the AI agent from replying to specific topics in Freshchat?
+
+To stop your AI agent from replying to specific topics in Freshchat you can use our [Block replies feature within Freshchat tagging](/features/channels/freshchat/freshchat-tagging).
+
+### How can I reassign a Freshchat conversation that has been handed over or escalated to a member of my team?
+
+To reassign a Freshchat ticket or conversation to a member of your team once it has been handed over create a Conversation Assignment Rule (**Freshchat Admin Settings > Configurations and Workflows > Workflows> Conversation Assignment Rules**) for conversations with AI Chat Status = `human-handover-requested` that re-assigns conversations to agents or groups.
+
+<Frame><img src="/images/image-4-1-1.png" alt="" width="563"  /></Frame>
+
+### How do I auto-close a ticket in Freshchat after a set amount of time?
+
+You can auto-close tickets in Freshchat (that have not been transferred to a person) after a certain time period without a response to an AI agent's response by:
+
+1. Going to **Channels > Add to helpdesk > Freshworks** and click on the Freshchat icon
+2. In the pop-up, scroll to "Auto-close inactive conversations" and toggle "Automatically close a conversations" to the On position
+3. Set the amount of time you want the ticket to close after (by default this is 60 mins)
+4. (Optional) You can also set a message to send automatically when the ticket closes notifying the user the ticket will be closed.
+5. These changes will go live immediately.
+
+### Will the AI agent use responses to questions the customer has given as part of my chatbot?
+
+Yes, your AI agent will use responses given by customers to chatbot questions as context for its responses.
+
+This is a great way to improve the accuracy of your AI agent's responses and ensure a better user experience.
+
+### Can I stop people speaking to a person on their first message on Freshchat?
+
+You can prevent "instant" human escalation on the 1st message in a conversation on Freshchat by navigating to **Channels > Add to helpdesk > Freshworks > Freshchat** and then toggling the "_Prevent immediate escalation_" feature.
+
+This option is on by default.
+
+When a user tries to escalate immediately they will be asked to provide more information first. On any subsequent messages, they can initiate a escalation to an agent.
+
+### How to collect email on handover/escalation in Freshchat
+
+When a Freshchat conversation has been handed over or escalated to an agent, you will likely want to collect the email address of the user or customer if they were a visitor.
+
+To do this, [follow our guide on escalation data collection here](/features/escalation-data-collection).
+
+### How can I add my Freshchat AI agent to other services, like WhatsApp, Instagram, Facebook Messenger, or SMS?
+
+You can use the Freshchat integration to use your AI agent directly within:
+
+* WhatsApp
+* Instagram DMs
+* Facebook Messenger
+* SMS
+
+It will retain all the [same features of the Freshchat agent](/features/channels/freshchat#how-can-i-use-my-ai-chatbot-within-intercom), including human escalation, but within the respective platforms.
+
+### Which Freshchat plan do I need to be on to use My AskAI?
+
+You can use the My AskAI Freshchat integration as long as you are on a Freshchat Pro plan or above.
+
+### Can I turn off the "Just thinking..." or "Just having a think..." messages in Freshchat?
+
+Yes you can turn off the "Just thinking" or "Just having a think" messages.
+
+Just go to **Channels > Add to helpdesk > Freshworks > Freshchat** and toggle the "Hide the "just thinking" message to off.
+
+### How can I pause or temporarily turn off AI replies or notes in Freshchat?
+
+To pause or temporarily pause AI replies or notes in Freshchat go to **Channels > Add to helpdesk > Freshworks > Freshchat** then scroll to the toggle for "Pause AI agent".
+
+When you are ready to turn it back on, just toggle the Pause button once more and it will start responding again.

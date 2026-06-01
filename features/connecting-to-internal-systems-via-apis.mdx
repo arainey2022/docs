@@ -1,0 +1,72 @@
+---
+title: "Connecting to Internal Systems via APIs"
+description: "Like your human agents, you'll want to give you AI agent access to your internal systems to look up a user's details or take actions like issuing a refund."
+---
+
+We provide a number of ways you can give your AI agent access to your internal systems, the primary uses cases for this are:
+
+* Accessing live customer data e.g. recent orders for a given customer's email address
+* Accessing specific information about something e.g. all details about a specific Order ID
+* Taking action e.g. refunding an order
+
+We connect to your internal systems securely via APIs you give your AI agent access to.&#x20;
+
+See the below options to decide what's best for your use case.
+
+<Danger>
+#### Before Getting Started
+
+Before you consider connecting your internal systems/data with your AI agent, be aware that you will very likely need a developer to help with this step.&#x20;
+
+This is because you will be providing APIs (in most cases new ones) to your AI agent.
+</Danger>
+
+#### 1. User Data API: Get user information (using a verified customer email address)
+
+When a customer is verified, by either emailing you from a known email address or the user is logged in on your system (and you've authenticated them with Zendesk, Intercom, etc.) then your AI agent can view the user's verified email address.
+
+The AI agent will call a User Data API you provide and your API will return information about the user.
+
+The is perfect for returning information about a user, their recent orders, their account, subscription, current plan, etc.
+
+You can read more about the User Data API and its set up here:
+
+<Card title="User Data API" href="/features/user-data-api" horizontal />
+
+#### 2. Actions (Tools): Get specific information about something e.g. an order
+
+Whether a customer is verified or not, you may want to allow them to ask about something that is in your back end data, for example, the status of a particular order.&#x20;
+
+In this case, you would provide your AI agent with an API that can accept a zip/post code and an order ID and return the latest information about that order.
+
+The AI agent will call the API you provide and answer the user's question with the content returned from your API.
+
+This is perfect for allowing un-verified users to ask about their account/orders or if you want to allow users to ask more about a specific piece of content in your system e.g. order, project, team, etc.
+
+We call these APIs "Tools" or "Actions".
+
+You can read more about setting these up here:&#x20;
+
+<Card title="AI Actions (Tools)" href="/features/ai-actions-tools" horizontal />
+
+<Info>
+If your API (Tool) is just fetching some information about something, it doesn't need to be part of a Task (see more below).
+</Info>
+
+#### 3. Tasks: Take action e.g. collect & save user data or cancelling an order
+
+This is a more advanced case where you have a multi-step workflow usually done by your human agents.&#x20;
+
+This might involve collecting some information from a user for booking a demo and then creating the meeting invite. Or it might involved checking recent orders, seeing if an order can be cancelled and then cancelling it.
+
+With a task, the AI agent will follow each step you define and some of these steps may involve API calls as well.&#x20;
+
+So you can consider a Task as a set of instructions that wrap together tools (APIs) that you have given your AI agent access to.
+
+You can read more on Tasks here:
+
+<Card title="Tasks" href="/features/tasks" horizontal />
+
+### Can I connect my AI agent to an MCP server?
+
+We do not currently have an MCP connector/server available publicly, however, if you are unable to connect your AI agent via our existing API connectors (like the [User Data API](/features/user-data-api), and [Tools](/features/ai-actions-tools)) then get in touch with our team by asking to "Speak to a person" and we will explain how we can help.
