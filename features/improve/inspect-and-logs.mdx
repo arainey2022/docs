@@ -2,7 +2,9 @@
 title: "Inspect & Logs"
 ---
 
-<Snippet file="echo.mdx" />
+<Tip>
+  Use your Echo AI agent in your account by clicking 'Ask Echo' to help you with this.
+</Tip>
 
 ### How can I review previous conversations/tickets and understand why the AI agent answered how it did?
 
@@ -14,41 +16,46 @@ If you are an Intercom or Zendesk user, you can also click the Ticket ID link in
 
 From the conversation/ticket history you can see:
 
-* The knowledge sources used to answer any question
-* The interpretation of the question as the AI understood it
-* A button to "Inspect answer"
+- The knowledge sources used to answer any question
+- The interpretation of the question as the AI understood it
+- A button to "Inspect answer"
 
 Clicking the "Ask Echo" button will let you ask questions to understand why the AI answered in the way that it did, for example:
 
-* "Why did it say x?"
-* "Why did it handover the ticket?"
-* "Where did it find x information?"
+- "Why did it say x?"
+- "Why did it handover the ticket?"
+- "Where did it find x information?"
 
 After you have typed your question, it will then show you the explanation for the answer, including any sources, user data or guidance that the AI agent used to answer.
 
 If this wasn't a satisfactory answer for you, you can fix the answer by either:
 
-* Creating a [Custom Answer](/features/improve/inspect-and-logs#custom-answers)
-* Adding [Guidance](/features/improve/guidance)
-* Adding [User Data](/features/user-data-api)
-* Adding a [Task](/features/tasks) or [Tool](/features/ai-actions-tools) call
+- Creating a [Custom Answer](/features/improve/inspect-and-logs#custom-answers)
+- Adding [Guidance](/features/improve/guidance)
+- Adding [User Data](/features/user-data-api)
+- Adding a [Task](/features/tasks) or [Tool](/features/ai-actions-tools) call
 
 ### How can I quickly find and correct a ticket or conversation?
 
 When a conversation is handed over to a human agent a note will be generated giving you tips on how to improve the response for next time, it will offer options of:
 
-* [Inspecting ](/features/improve/inspect-and-logs#how-can-i-see-what-content-or-knowledge-is-used-most-often-in-conversations)the conversation to see what knowledge was used
-* Adding [guidance](/features/improve/guidance) to control reply tone/style & how scenarios are handled
-* Creating [custom answers](/features/improve/inspect-and-logs#custom-answers) to fill knowledge gaps (draft with AI)
-* Connecting your internal systems for [live customer data](/api-documentation/user-data-api)
-* Drafting AI replies with our [copilot extension](/features/channels/chrome-extension)
+- [Inspecting ](/features/improve/inspect-and-logs#how-can-i-see-what-content-or-knowledge-is-used-most-often-in-conversations)the conversation to see what knowledge was used
+- Adding [guidance](/features/improve/guidance) to control reply tone/style & how scenarios are handled
+- Creating [custom answers](/features/improve/inspect-and-logs#custom-answers) to fill knowledge gaps (draft with AI)
+- Connecting your internal systems for [live customer data](/api-documentation/user-data-api)
+- Drafting AI replies with our [copilot extension](/features/channels/chrome-extension)
 
 ### How can I filter my logs to only see tickets/conversations that were escalated?
 
 You can filter your logs/ticket history to only show tickets/conversations that were handed over or escalated by going to **Inspect & Logs** in your Dashboard and then clicking the Advanced button and toggling the 'Escalated to human' switch on.
 
-<Frame><img src="/images/image-553.png" alt="" width="563"  /></Frame>
+<Frame>
+  <img
+    src="/images/image-553.png"
+    width="563"
+  />
+</Frame>
 
 ### How do I turn off the "Admin notes" that I see on each handover?
 
-You can turn off the "Admin notes" by going to **Account Settings > Other settings > Disable admin note tips.**
+You can turn off the "Admin notes" by going to **Account Settings \> Other settings \> Disable admin note tips.**

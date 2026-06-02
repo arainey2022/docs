@@ -1,10 +1,11 @@
 ---
 title: "Lead (Email) Capture"
 description: "Lead or email capture is a feature that allows your AI agent to capture the email addresses of anyone who uses it so you can follow up with them at a later date."
+hidden: true
 ---
 
 <Info>
-The lead capture is available when using the My AskAI widget, if you are using one of our channels ([Intercom](/features/channels/intercom), [Zendesk](/features/channels/zendesk/zendesk-messaging) or [HubSpot](/features/channels/hubspot)), you will use their respective lead capture features to collect email addresses.&#x20;
+  The lead capture is available when using the My AskAI widget, if you are using one of our channels ([Intercom](/features/channels/intercom), [Zendesk](/features/channels/zendesk/zendesk-messaging) or [HubSpot](/features/channels/hubspot)), you will use their respective lead capture features to collect email addresses. 
 </Info>
 
 ### What is lead or email capture?
@@ -13,9 +14,9 @@ Lead capture is an optional feature you can turn on for your AI agent that will 
 
 Users will only be asked for their email once, it will be saved for future conversations.
 
-### &#x20;How do I turn lead capture on or off?
+###  How do I turn lead capture on or off?
 
-To turn lead capture on or off, go to your _**Dashboard > AI agent setup > Lead capture**_ then toggle the "Email capture" switch on or off.
+To turn lead capture on or off, go to your **_Dashboard \> AI agent setup \> Lead capture_** then toggle the "Email capture" switch on or off.
 
 ### Where can I see the leads the AI agent has collected?
 
@@ -23,7 +24,7 @@ There are 3 main ways you can see the leads your AI agent has collected, each me
 
 #### Export/Download all your leads as a CSV file
 
-Go to _**Dashboard > AI agent setup > Lead capture > Export leads**_ and press the "Download all leads" button.
+Go to **_Dashboard \> AI agent setup \> Lead capture \> Export leads_** and press the "Download all leads" button.
 
 #### View your leads with their conversations in the Insights view
 
@@ -37,32 +38,26 @@ If you have set up a webhook, then you will receive a notification 60 minutes af
 
 ### How do I create a webhook for lead capture?
 
-To create a webhook for lead capture go to _**Dashboard > AI agent setup > Lead capture > Webhook settings**_ and then click the toggle to make your webhook "active".
+To create a webhook for lead capture go to **_Dashboard \> AI agent setup \> Lead capture \> Webhook settings_** and then click the toggle to make your webhook "active".
 
 Once activated you will need to set a destination for your webhook, for example, Zapier (if you want to create an email trigger for each lead captured).
 
 Here is a tutorial showing you how to create your webhook and send leads to your email (or CRM) via Zapier:
 
 <Frame>
-<iframe
-  width="100%"
-  height="400"
-  src="https://www.youtube.com/embed/mbc8iASV-Ek"
-  title="Embedded video"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowFullScreen
-></iframe>
+  <iframe width="100%" height="400" src="https://www.youtube.com/embed/mbc8iASV-Ek" title="Embedded video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
 </Frame>
 
 You can test that the webhook is set up correctly by pressing the "Test webhook" button, this will send an example dummy notification to your webhook's destination so you can see what the request will look like.
 
 ### How do I turn off lead capture for logged-in users?
 
-By default, lead capture will be on for all users of your AI agent.&#x20;
+By default, lead capture will be on for all users of your AI agent. 
 
 You can however set a flag within the embed script tag to turn off lead capture for logged-in customers or users on certain pages you don't want to require email collection.
 
 You will just need to add the flag **data-hide-lead-capture="true"** to your script on pages you want to turn lead capture off.
 
-<Frame><img src="/images/image-338.png" alt=""  /></Frame>
+<Frame>
+  ![](/images/image-338.png)
+</Frame>
