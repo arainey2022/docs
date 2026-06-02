@@ -638,5 +638,13 @@
       "linkedin": "https://www.linkedin.com/company/myaskai/",
       "youtube": "https://www.youtube.com/@usemyaskai"
     }
+  },
+  "search": {
+    "prompt": "Search..."
+  },
+  "integrations": {
+    "intercom": {
+      "appId": "s8su4f08"
+    }
   }
 }
