@@ -5,11 +5,11 @@ description: "Connect your Shopify store to your AI agent so it can answer quest
 
 ### Why use My AskAI with Shopify?
 
-My AskAI handles common Shopify support queries automatically — WISMO/order status lookups, shipping questions, returns policies, product information, and more. 
+My AskAI handles common Shopify support queries automatically — WISMO/order status lookups, shipping questions, returns policies, product information, and more.
 
-It pulls real-time order data from Shopify so customers get accurate, up-to-date answers without waiting for a human agent. 
+It pulls real-time order data from Shopify so customers get accurate, up-to-date answers without waiting for a human agent.
 
-For anything it can't resolve, it escalates to your team with full conversation context. 
+For anything it can't resolve, it escalates to your team with full conversation context.
 
 Most Shopify stores see 70%\+ of support queries resolved by the AI agent within the first month.
 
@@ -26,8 +26,7 @@ Connecting your Shopify store to your AI agent, along with your product pages an
 3. Once connected, we will automatically sync all of your Shopify store:
    1. Pages
    2. Products
-   3. Customer data
-   You will see the content (pages and products) sync almost immediately.
+   3. Customer data You will see the content (pages and products) sync almost immediately.
 4. The setup for your Shopify store connection to your AI agent is now complete. \
    \
    You can check the content synced by clicking the **"Content (x pages/products)"** button which will show a list of every page your AI agent has access to.
@@ -56,7 +55,7 @@ Key things to know:
 - **Multi-currency:** Your AI agent can retrieve and reference order details including pricing, regardless of the currency the customer purchased in.
 - **Single or multi-market stores:** Whether you run one Shopify store serving multiple markets or separate storefronts, you can add your AI agent to each using the same code snippet.
 
-If you're using Shopify Markets with a helpdesk like Gorgias or Zendesk, your AI agent integrates with both — handling customer queries on your site and within your helpdesk. 
+If you're using Shopify Markets with a helpdesk like Gorgias or Zendesk, your AI agent integrates with both — handling customer queries on your site and within your helpdesk.
 
 ### How do I disconnect my Shopify store and all of content and user data from my AI agent?
 
@@ -76,7 +75,7 @@ There are 2 ways users can check details of their Shopify orders:
    3. Price of order
    4. Items ordered
    5. Any tracking links from Shopify
-   6. Their Shopify order status page 
+   6. Their Shopify order status page
 2. The other way users can get details of their Shopify orders is through any of our [integration channels](/features/channels).\
    \
    In these, if a user contacts you asking for any order updates or details, your AI agent will automatically be able to retrieve such details and provide answers on them (as their email address has been verified).
@@ -96,3 +95,84 @@ There is no cost for using the Shopify integration, it's usage is included in al
 <Warning>
   If responses from the Shopify API exceed 1,500 characters, each response will be charged as a tool (at \$0.02 per message).
 </Warning>
+
+### What Shopify data can the AI agent access once integrated?
+
+Once integrated your AI agent can access the following customer data via the Customer Data connection:
+
+**Customer lookup**
+
+- One matching customer is looked up by email address.
+- Up to 10 recent orders can be returned for a customer.
+- Up to 10 line items can be returned for each order.
+
+**Order lookup**
+
+- The order-specific lookup returns one matched order.
+- The order-specific lookup can also include up to 10 other recent order references.
+
+**Customer Fields**
+
+- Customer ID
+- First name
+- Email address
+- Number of orders
+
+**Order Fields**
+
+- Order status page URL
+- Total order price
+- Currency
+- Total amount refunded
+- Unpaid status
+- Processed date
+- Last updated date
+- Order number or order name
+- Cancellation reason
+- Discount code
+- Fulfillable status
+- Refundable status
+- Return or refund status
+- Total discounts
+
+**Line Item Fields**
+
+- Fulfilment status
+- Original line item total
+- Quantity
+- Requires shipping
+- Product or item title
+- Line item discount total
+- Variant title
+- Product online store URL
+
+**Shipping Fields**
+
+- Shipping method or shipping line title
+- Formatted shipping address
+- Shipping address time zone
+
+**Fulfilment and Tracking Fields**
+
+- Fulfilment created date
+- Delivered date
+- Fulfilment display status
+- Estimated delivery date
+- Fulfilment ID
+- In-transit date
+- Requires shipping
+- Fulfilment status
+- Total fulfilled quantity
+- Fulfilment last updated date
+- Tracking company
+- Tracking number
+- Tracking URL
+- Fulfilment name
+
+**Other Recent Order Fields**\
+\
+When a specific order is looked up, My AskAI may also show other recent orders for the\
+same customer. Each other recent order can include:
+
+- Order number
+- Processed date
