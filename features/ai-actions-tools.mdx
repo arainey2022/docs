@@ -31,13 +31,24 @@ Your AI agent will understand the ticket it is answering and decide when it need
 
 The [User Data API](/api-documentation/user-data-api) is to be used when you need to retrieve information or data about a specific user and can only be used where you have a verified user (email support ticket or authenticated live chat user).
 
+What API request methods can Actions (Tools) APIs support?
+
+Actions (Tools) can support any API request method, including:
+
+- POST
+- GET
+- PATCH
+- PUT
+
+and more.
+
 ### How do I set up tools?
 
 In your Dashboard go to **Tasks & Tools \> Tools (APIs)** and click **\+ New.**
 
 Each tool will map to an API and needs the following details:
 
-- **POST API endpoint:** e.g. `https://api.company.com/orders`
+- **API endpoint:** e.g. `https://api.company.com/orders`
 - **Authentication headers:** e.g. `Authorization: Bearer <token>`
 - **JSON request body:** include the fields your tool needs, such as `"email"` and `"order_id"`
 - **Other headers (optional)**
