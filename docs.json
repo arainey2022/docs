@@ -646,5 +646,12 @@
     "intercom": {
       "appId": "s8su4f08"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/features/integrations*",
+      "destination": "/features/channels*",
+      "permanent": true
+    }
+  ]
 }
