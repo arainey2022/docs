@@ -649,8 +649,8 @@
   },
   "redirects": [
     {
-      "source": "/features/integrations*",
-      "destination": "/features/channels*",
+      "source": "/features/integrations/:slug*",
+      "destination": "/features/channels/:slug*",
       "permanent": true
     }
   ]
