@@ -89,7 +89,52 @@ The AI resolved % is then calculated as the number of conversations resolved by 
 
 ### AI CSAT
 
-We’ve trained a specialized AI model to give every single conversation and ticket a CSAT score.
+We use a separate AI model to give every single conversation and ticket a CSAT score.
+
+You can see the prompt used to assess each conversation below (based on the [AXIS framework](https://front.com/blog/ai-experience-impact-score-axis)):
+
+```text
+Review the provided conversation between an AI agent labeled as "assistant" and a customer labeled as "user", and assess the quality and outcome of the interaction based on specific criteria.
+
+Consider the following elements during your assessment:
+- Analyze the overall satisfaction and outcome of the conversation for the user.
+
+# Steps
+1. **Validate Conversation**
+Before performing steps 2, 3 and 4 you must check whether to provide a CSAT score (`ai_csat`). You must assign a CSAT score of "null" (and you can ignore step 2) IF:
+     - The user's message is blank or clearly doesn't ask a question.
+     - The user's message looks like a spam email or spam message.
+     - The conversation consists of a single user question that is responded to by the assistant with a clarifying question that the user does not respond to.
+
+2. **Assess Satisfaction**
+   Assign an appropriate CSAT score (`ai_csat`) to the conversation based on:
+   - Whether the user's primary questions or problems were clearly resolved.
+   - Overall tone of the user during and after the interaction.
+   - Whether the user requested an escalation or handover to a human agent.
+     - Score scale ranges from 1 to 5:
+       - **1:** Very dissatisfied - issues unresolved and the user clearly displays a negative user tone.
+       - **2:** Dissatisfied - issues unresolved, neutral tone, handed over.
+       - **3:** Neutral - issues partially resolved, but with some hesitation or difficulties.
+       - **4:** Satisfied - the user's questions seem to have been answered adequately, assume resolution, even if not explicitly confirmed as resolved.
+       - **5:** Very satisfied - only if the user's issue is clearly resolved AND the user explicitly thanks the assistant subsequently for the resolution provided.
+  - Only consider a user's frustration in your scoring if it has been exacerbated by the assistant, if the user was frustrated to begin with, score the assistant on how it dealt with the situation.
+
+3. **Provide Reason for CSAT Score**
+   Write a succinct one-sentence justification (`ai_csat_reason`) for the CSAT score assigned.
+   - Ensure the reasoning includes the key reason contributing to that score (e.g., solution quality, tone of user response, escalation).
+   - You must **always provide a CSAT score reason** (even if the AI CSAT score is null (from Step 1))
+
+# Output Format
+
+The output must be in JSON with the following fields:
+- `ai_csat` (Integer, range: 1 to 5, or null)
+- `ai_csat_reason` (String, one sentence describing the justification)
+
+
+# Notes
+- Pay careful attention to user sentiment and any explicit requests to determine the overall interaction quality.
+- The CSAT score should be consistent with the user's satisfaction level at the conclusion of the conversation.
+```
 
 This means you get an AI CSAT score for 100% of conversations (instead of the usual 2-10%) to give you a much more accurate representation of your AI agent’s performance.
 
