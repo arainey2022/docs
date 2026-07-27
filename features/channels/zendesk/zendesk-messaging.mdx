@@ -6,9 +6,7 @@ description: "Connect your AI support agent to your Zendesk account and existing
 You can now integrate your AI agent directly into Zendesk Messaging for a seamless AI experience.
 
 <Check>
-  The Zendesk Messaging integration is available on all paid My AskAI plans, [see our pricing](https://myaskai.com/pricing).\
-  \
-  All Zendesk Messaging bot integrations require you to have Sunshine Conversations access (on the Zendesk Suite Professional plan or above) and usage purchased or included in your Zendesk plan. 
+  The Zendesk Messaging integration is available on all paid My AskAI plans, [see our pricing](https://myaskai.com/pricing).<br /><br />All Zendesk Messaging bot integrations require you to have Sunshine Conversations access (on the Zendesk Suite Professional plan or above) and usage purchased or included in your Zendesk plan. 
 
   If you would like to learn more about purchasing Sunshine Conversations, please speak directly with Zendesk who will be happy to help.
 </Check>
@@ -33,9 +31,7 @@ See how Customer.io are using My AskAI within Zendesk to reduce their ticket vol
 1. Login to your Dashboard and go to _Channels_. 
 2. Go to the section "Add to helpdesk" and click on the Zendesk icon and select Zendesk Messaging.
 3. Click to connect your Zendesk account:
-4. If you have multiple Zendesk accounts, you will need to input your Zendesk subdomain, which you can find by looking at the URL of your Admin Center or Agent Dashboard e.g. (the text in **bold below** is the subdomain):\
-   \
-           _https://**teammyaskai**.zendesk.com_\
+4. If you have multiple Zendesk accounts, you will need to input your Zendesk subdomain, which you can find by looking at the URL of your Admin Center or Agent Dashboard e.g. (the text in **bold below** is the subdomain):<br /><br />        _https://**teammyaskai**.zendesk.com_<br />
 5. Enter your subdomain and click "Sign in"
 
 <Frame>
@@ -66,22 +62,14 @@ See how Customer.io are using My AskAI within Zendesk to reduce their ticket vol
 </Frame>
 
 10. After tickets have been 'Solved' they need to be moved to 'Closed', so that the AI agent can take control of the conversation again. There are two ways you can do this.
-    1. Go to **_Objects and rules \> Automations_**, and find the existing automation called "Close ticket 4 days". Edit the "Hours since status..." field to 1 (recommended, but you can choose your own value). This means after tickets are solved, they will be closed within an hour and control returned to the AI assistant.\
+    1. Go to **_Objects and rules \> Automations_**, and find the existing automation called "Close ticket 4 days". Edit the "Hours since status..." field to 1 (recommended, but you can choose your own value). This means after tickets are solved, they will be closed within an hour and control returned to the AI assistant.<br />
        <Frame>
          <img
            src="/images/image-402.png"
            width="563"
          />
        </Frame>
-    2. If you want to immediately pass back control to the AI agent when a ticket has been solved, then you will need to set up a 'Trigger'. To do this, go to **_Objects and rules \> Triggers \> Create trigger._**\
-       \
-       Create the following trigger:\
-       \
-       **Trigger name**: Auto-Close Solved Ticket\
-       **Description**: Close a ticket that has been marked as solved\
-       **Category**: Ticket Status (you may have to \+ Add Category if this is not already available)\
-       **Conditions**: Meet ALL of the following conditions: _Ticket \> Status category_ | _IS_ | _Solved_\
-       **Actions:** _Ticket Status \> category_ | _Closed_
+    2. If you want to immediately pass back control to the AI agent when a ticket has been solved, then you will need to set up a 'Trigger'. To do this, go to **_Objects and rules \> Triggers \> Create trigger._**<br /><br />Create the following trigger:<br /><br />**Trigger name**: Auto-Close Solved Ticket<br />**Description**: Close a ticket that has been marked as solved<br />**Category**: Ticket Status (you may have to \+ Add Category if this is not already available)<br />**Conditions**: Meet ALL of the following conditions: _Ticket \> Status category_ | _IS_ | _Solved_<br />**Actions:** _Ticket Status \> category_ | _Closed_
 
 <Frame>
   <img
@@ -102,9 +90,7 @@ See how Customer.io are using My AskAI within Zendesk to reduce their ticket vol
 14. You're all done! Ask questions to your new AI agent within your Zendesk Messaging widget and see how it responds.
 
 <Warning>
-  Once you have enabled My AskAI in Zendesk Messaging, it will start responding automatically, there is no "Internal Notes" mode for replies in Zendesk Messaging (only Zendesk Tickets). \
-  \
-  You can, however, pause replies at any time once set up by going to **Channels \> Zendesk \> Zendesk Messaging**, scrolling to the bottom of the page and toggling "Pause AI agent" on.
+  Once you have enabled My AskAI in Zendesk Messaging, it will start responding automatically, there is no "Internal Notes" mode for replies in Zendesk Messaging (only Zendesk Tickets). <br /><br />You can, however, pause replies at any time once set up by going to **Channels \> Zendesk \> Zendesk Messaging**, scrolling to the bottom of the page and toggling "Pause AI agent" on.
 </Warning>
 
 ### Are tickets automatically created for conversations when the AI replies in Zendesk Messaging?
@@ -114,6 +100,8 @@ No, a ticket is not automatically created for every conversation the AI replies 
 A ticket is only created in Zendesk Messaging when the conversation is passed over to a human.
 
 At the point of this escalation, the ticket will be created and the history of the conversation will be accessible.
+
+When a Zendesk Messaging ticket is created on escalation, the tag: `human-handover-requested` will be be applied to the ticket.
 
 ### How can I use my AI agent within Zendesk Messaging?
 
