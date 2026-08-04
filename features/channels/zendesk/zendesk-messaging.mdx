@@ -95,11 +95,9 @@ See how Customer.io are using My AskAI within Zendesk to reduce their ticket vol
 
 ### Are tickets automatically created for conversations when the AI replies in Zendesk Messaging?
 
-No, a ticket is not automatically created for every conversation the AI replies to in Zendesk Messaging.
+Yes, a ticket is automatically created for every conversation the AI replies to in Zendesk Messaging, whether or not the ticket has been escalated.
 
-A ticket is only created in Zendesk Messaging when the conversation is passed over to a human.
-
-At the point of this escalation, the ticket will be created and the history of the conversation will be accessible.
+By default the ticket will be marked as "AI agent" and isn't editable, this is a Zendesk AI feature, to turn this off [follow these instructions](https://support.zendesk.com/hc/en-us/articles/9204149016346-Understanding-AI-agent-tickets-for-AI-agent-only-conversations#topic_myq_2r1_2gc).
 
 When a Zendesk Messaging ticket is created on escalation, the tag: `human-handover-requested` will be be applied to the ticket.
 
@@ -120,6 +118,12 @@ If, at any time, the user wishes to be passed over to a person to continue the c
 Once the conversation is passed over to the human, the AI will not respond again until the agent hands back control to the AI or the ticket is closed.
 
 As part of the escalation, the AI agent will summarize the conversation so the agent can pick up where the user left off so there is no repetition or frustration.
+
+### How can I auto-close a ticket in Zendesk Messaging?
+
+Your Zendesk account should already have an automation that can auto-close tickets after a certain period of inactivity. 
+
+If this isn't working, then you can setup one up by [following these instructions]([<u>https://support.zendesk.com/hc/en-us/articles/4408831235738-Workflow-How-to-solve-a-ticket-automatically-after-a-certain-amount-of-time</u>]\(https://support.zendesk.com/hc/en-us/articles/4408831235738-Workflow-How-to-solve-a-ticket-automatically-after-a-certain-amount-of-time\)).
 
 ### Can I stop people speaking to a person on their first message on Zendesk Messaging?
 
