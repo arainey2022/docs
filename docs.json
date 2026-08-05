@@ -652,6 +652,56 @@
       "source": "/features/integrations/:slug*",
       "destination": "/features/channels/:slug*",
       "permanent": true
+    },
+    {
+      "source": "/features/sitesync-adding-and-syncing-your-website-content",
+      "destination": "/features/adding-and-syncing-your-website-content",
+      "permanent": true
+    },
+    {
+      "source": "/features/channels/intercom-messenger",
+      "destination": "/features/channels/intercom",
+      "permanent": true
+    },
+    {
+      "source": "/features/improve-\\+-custom-answers",
+      "destination": "/features/improve/custom-answers",
+      "permanent": true
+    },
+    {
+      "source": "/features/custom-answers",
+      "destination": "/features/improve/custom-answers",
+      "permanent": true
+    },
+    {
+      "source": "/features/human-handover",
+      "destination": "/features/human-escalation",
+      "permanent": true
+    },
+    {
+      "source": "/features/guidance",
+      "destination": "/features/improve/guidance",
+      "permanent": true
+    },
+    {
+      "source": "/features/user-data-api-and-api-actions/user-data-api-setup",
+      "destination": "/features/user-data-api/user-data-api-setup",
+      "permanent": true
+    },
+    {
+      "source": "/features/tools",
+      "destination": "/features/ai-actions-tools",
+      "permanent": true
+    },
+    {
+      "source": "/features/channels/zendesk/zendesk-tagging-\\+-sentiment",
+      "destination": "/features/channels/zendesk/zendesk-tagging",
+      "permanent": true
+    },
+    {
+      "source": "/start-here/how-long-does-it-take-to-set-up",
+      "destination": "/start-here/onboarding",
+      "permanent": true
     }
   ]
 }
