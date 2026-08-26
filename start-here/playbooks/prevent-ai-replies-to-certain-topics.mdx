@@ -1,0 +1,68 @@
+---
+title: "Prevent AI replies to certain topics"
+description: "Choose which support topics receive a direct reply, a Note, or no AI reply."
+---
+
+Use AI Tagging when you want different reply rules for different topics. Use handover guidance for a short list of escalation scenarios. Use email filters for known senders, domains, or subject text.
+
+| Method | Best for | Result | Add-on cost |
+| --- | --- | --- | --- |
+| AI Tagging | Topic-based rules | Direct reply, Note, or blocked reply | $0.05 per tag or field per ticket |
+| Handover guidance | Five to ten escalation scenarios | The AI agent tells the customer that it is handing over | None |
+| Email filters | Known senders, domains, or subject text | No AI reply | None |
+
+## Use AI Tagging
+
+AI Tagging is the recommended method when your team already categorizes tickets. It also works when you do not want some topics to receive any AI reply.
+
+AI Tagging supports Intercom, Zendesk tickets, Freshdesk, Freshchat, and Gorgias. It does not support Zendesk Messaging or HubSpot.
+
+1. In the Dashboard, go to **AI Agent Setup > AI Tagging**.
+2. Import a field from your helpdesk, or add the tag values in My AskAI.
+3. Review the description for each value. The description tells the AI agent when to apply the value.
+4. Set each value to allow direct replies, create Notes, or block replies.
+5. Test each rule before you enable direct replies.
+
+Use the setup method for your helpdesk:
+
+- Intercom imports List-type conversation attributes.
+- Zendesk tickets imports tags or custom ticket fields.
+- Freshdesk imports tags or custom ticket fields.
+- Freshchat imports conversation properties.
+- Gorgias requires you to add the tag names and descriptions in My AskAI.
+
+Echo can explain this setup, but it cannot create AI Tagging rules.
+
+Read the detailed setup guide for [Intercom](/features/channels/intercom/intercom-tagging), [Zendesk tickets](/features/channels/zendesk/zendesk-tagging), [Freshdesk](/features/channels/freshdesk/freshdesk-tagging), or [Freshchat](/features/channels/freshchat/freshchat-tagging).
+
+## Use handover guidance
+
+Use handover guidance when you have a short list of topics that must always go to a person. Examples include legal issues, safety complaints, or cancellation requests.
+
+1. In the Dashboard, go to **Improve > Guidance**.
+2. Add handover guidance for each scenario.
+3. State when the AI agent must hand over.
+4. State what the AI agent must tell the customer.
+5. Test the guidance with Echo or **Improve > Test**.
+
+Handover guidance works with all supported helpdesks. You can ask Echo to create or edit this guidance.
+
+For a process that must collect information before handover, create a [Task](/features/tasks). For more details, read [Guidance](/features/improve/guidance).
+
+## Use email filters
+
+Use email filters only for email channels. The filter can match a sender email address, a sender domain, or words in the subject.
+
+1. In the Dashboard, go to **AI Agent Setup > Customize**.
+2. Find **Block certain emails e.g. spam**.
+3. Add the email addresses, domains, or subject keywords.
+4. Save the advanced settings.
+5. Send a matching test email and confirm that the AI agent does not reply.
+
+You can also ask Echo to add these filters. Read [Spam filters](/features/spam-filters) for more details.
+
+## Related playbooks
+
+- [Prevent AI replies to certain customers or brands](/start-here/playbooks/prevent-ai-replies-to-certain-customers-or-brands)
+- [Gradually roll out AI support](/start-here/playbooks/gradually-roll-out-ai-support)
+- [Test before going live](/start-here/playbooks/test-before-going-live)

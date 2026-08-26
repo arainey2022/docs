@@ -1,0 +1,61 @@
+---
+title: "Set up AI agents for multiple brands"
+description: "Give each brand separate knowledge, guidance, tasks, and helpdesk routing."
+---
+
+Use one AI agent for each brand when the brands need separate knowledge, guidance, tasks, or tone. A brand can also represent a region, product line, shop, or customer type.
+
+The Scale plan is `$499 per month` and supports a multi-agent setup. Enterprise includes unlimited AI agents. Check [current My AskAI pricing](https://myaskai.com/pricing) before you change your plan.
+
+## Create the brand accounts
+
+1. Upgrade the main account to Scale or Enterprise.
+2. Create a My AskAI account for each additional brand.
+3. Use a unique email address such as `name+brand@company.com`.
+4. Contact My AskAI support to link and enable the additional brand accounts.
+5. Add only that brand's knowledge, guidance, and tasks to each account.
+6. Connect each AI agent to the correct helpdesk workspace, channel, inbox, or rule.
+7. Test each brand with a question that the other brands answer differently.
+
+During a trial, start with your largest brand. Contact My AskAI support if you must test several brands during the trial.
+
+## Intercom
+
+Connect each My AskAI account to its matching Intercom workspace. If several brands share one workspace, contact My AskAI support before you connect the agents.
+
+## Zendesk tickets
+
+Each AI agent creates its own Zendesk trigger. Add a brand condition to each trigger so that it sends tickets to the correct AI agent.
+
+For example, the first trigger can require `Brand is Europe`. The second trigger can require `Brand is North America`.
+
+## Zendesk Messaging
+
+Connect each AI agent to the correct Messaging channel or widget. My AskAI support must configure this mapping. You may need to create a Zendesk Conversations API key.
+
+## Gorgias
+
+- For email, set the support inbox that each AI agent can reply from under **AI Agent Setup > Customize > Reply from specific accounts only**.
+- For chat, contact My AskAI support to map the brand channels.
+
+## Freshdesk
+
+Each AI agent uses two Freshdesk automations: one for ticket creation and one for ticket updates.
+
+Add the same brand condition to both automations for each AI agent. A missing condition in either automation can send the ticket to the wrong agent.
+
+## Freshchat
+
+Contact My AskAI support to map each AI agent to the correct Freshchat widget or channel.
+
+## HubSpot
+
+Use separate support inboxes for email. Use chatflow targeting rules for chat. Contact My AskAI support before you connect several AI agents to one HubSpot account.
+
+Read [Multibrand](/features/multibrand) for the existing helpdesk-specific setup links.
+
+## Related playbooks
+
+- [Prevent AI replies to certain customers or brands](/start-here/playbooks/prevent-ai-replies-to-certain-customers-or-brands)
+- [Gradually roll out AI support](/start-here/playbooks/gradually-roll-out-ai-support)
+- [Test before going live](/start-here/playbooks/test-before-going-live)

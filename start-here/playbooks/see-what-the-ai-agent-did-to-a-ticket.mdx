@@ -1,0 +1,86 @@
+---
+title: "See what the AI agent did to a ticket"
+description: "Use helpdesk replies, Notes, tags, properties, and assignments to identify each AI action."
+---
+
+Each helpdesk records AI replies, Notes, handovers, and blocked topics differently. Use the section for your helpdesk.
+
+## Intercom
+
+| Outcome | What you see |
+| --- | --- |
+| Direct reply | A customer-visible reply. The conversation remains unassigned and no reply tag is added. |
+| Note | A Note that only agents can see. |
+| Handover | A Note and the `AI human handover` tag. |
+| Topic blocked | A Note and the `AI topic blocked` tag. |
+
+## Zendesk Messaging
+
+| Outcome | What you see |
+| --- | --- |
+| Direct reply | A customer-visible reply in the Messaging conversation. |
+| Note | Zendesk Messaging does not support Note replies. |
+| Handover | The `human-handover-requested` tag. The conversation passes to human agents. |
+| Topic blocked | Zendesk Messaging does not support AI Tagging. |
+
+Zendesk creates a read-only AI-agent ticket until the conversation passes to a person. Read [Zendesk Messaging ticket behavior](/features/channels/zendesk/zendesk-messaging#are-tickets-automatically-created-for-conversations-when-the-ai-replies-in-zendesk-messaging).
+
+## Zendesk tickets
+
+| Outcome | What you see |
+| --- | --- |
+| Direct reply | A customer-visible reply and the `ai-agent-replied` tag. |
+| Note | A Note and the `ai-agent-replied-note` tag. |
+| Handover | A Note and the `human-handover-requested` tag. |
+| Topic blocked | A Note and the `ai-agent-tag-blocked` tag. |
+
+## Gorgias
+
+| Outcome | What you see |
+| --- | --- |
+| Direct reply | A customer-visible reply and the `ai-agent-replied` tag. |
+| Note | An internal Note that only agents can see. |
+| Handover | A Note and the `human-handover-requested` tag. |
+| Topic blocked | A Note and the `ai-agent-tag-blocked` tag. |
+
+## Freshdesk
+
+| Outcome | What you see |
+| --- | --- |
+| Direct reply | A customer-visible reply and the `ai-agent-replied` tag. |
+| Note | A Note that only agents can see. |
+| Handover | A Note and the `human-handover-requested` tag. |
+| Topic blocked | A Note and the `ai-agent-tag-blocked` tag. |
+
+## Freshchat
+
+Freshchat uses the **AI Chat Status** conversation property. Create this property before you use it for views or automations.
+
+1. In Freshchat, go to **Admin Settings > Configuration and Workflow > Conversation Properties**.
+2. Create a Dropdown property named **AI Chat Status**.
+3. Set the internal name to `ai_chat_status`.
+4. Leave the choices empty.
+
+| Outcome | What you see |
+| --- | --- |
+| Direct reply | A customer-visible reply and `AI Chat Status = ai-agent-replied`. |
+| Note | A Note that only agents can see. |
+| Handover | A Note and `AI Chat Status = human-handover-requested`. |
+| Topic blocked | A Note and `AI Chat Status = ai-agent-tag-blocked`. |
+
+Read [Freshchat](/features/channels/freshchat) for the AI Chat Status setup.
+
+## HubSpot
+
+| Outcome | What you see |
+| --- | --- |
+| Direct reply | A customer-visible reply. The AI agent assigns the conversation to itself. |
+| Note | A comment that only agents can see. |
+| Handover | A Note and the AI agent unassigns itself from the conversation. |
+| Topic blocked | HubSpot does not support AI Tagging. |
+
+## Related playbooks
+
+- [Change ticket status or assignment after an AI action](/start-here/playbooks/change-ticket-status-or-assignment-after-an-ai-action)
+- [Auto-close or archive AI-handled tickets](/start-here/playbooks/auto-close-or-archive-ai-handled-tickets)
+- [Improve a specific AI response](/start-here/playbooks/improve-a-specific-ai-response)

@@ -32,7 +32,21 @@
           },
           "start-here/create-your-ai-customer-service-agent",
           "start-here/onboarding",
-          "start-here/testing",
+          {
+            "group": "Playbooks",
+            "pages": [
+              "start-here/playbooks",
+              "start-here/playbooks/test-before-going-live",
+              "start-here/playbooks/gradually-roll-out-ai-support",
+              "start-here/playbooks/prevent-ai-replies-to-certain-topics",
+              "start-here/playbooks/prevent-ai-replies-to-certain-customers-or-brands",
+              "start-here/playbooks/improve-a-specific-ai-response",
+              "start-here/playbooks/see-what-the-ai-agent-did-to-a-ticket",
+              "start-here/playbooks/change-ticket-status-or-assignment-after-an-ai-action",
+              "start-here/playbooks/auto-close-or-archive-ai-handled-tickets",
+              "start-here/playbooks/set-up-ai-agents-for-multiple-brands"
+            ]
+          },
           {
             "group": "Add your AI agent to your website",
             "pages": [
@@ -54,6 +68,7 @@
           "features/ai-answers-on-your-content",
           "features/human-escalation",
           "features/escalation-data-collection",
+          "features/testing",
           {
             "group": "Channels",
             "pages": [
@@ -330,7 +345,21 @@
           },
           "start-here/create-your-ai-customer-service-agent",
           "start-here/onboarding",
-          "start-here/testing",
+          {
+            "group": "Playbooks",
+            "pages": [
+              "start-here/playbooks",
+              "start-here/playbooks/test-before-going-live",
+              "start-here/playbooks/gradually-roll-out-ai-support",
+              "start-here/playbooks/prevent-ai-replies-to-certain-topics",
+              "start-here/playbooks/prevent-ai-replies-to-certain-customers-or-brands",
+              "start-here/playbooks/improve-a-specific-ai-response",
+              "start-here/playbooks/see-what-the-ai-agent-did-to-a-ticket",
+              "start-here/playbooks/change-ticket-status-or-assignment-after-an-ai-action",
+              "start-here/playbooks/auto-close-or-archive-ai-handled-tickets",
+              "start-here/playbooks/set-up-ai-agents-for-multiple-brands"
+            ]
+          },
           {
             "group": "Add your AI agent to your website",
             "hidden": true,
@@ -353,6 +382,7 @@
           "features/ai-answers-on-your-content",
           "features/human-escalation",
           "features/escalation-data-collection",
+          "features/testing",
           {
             "group": "Channels",
             "pages": [
@@ -701,6 +731,11 @@
     {
       "source": "/start-here/how-long-does-it-take-to-set-up",
       "destination": "/start-here/onboarding",
+      "permanent": true
+    },
+    {
+      "source": "/start-here/testing",
+      "destination": "/features/testing",
       "permanent": true
     }
   ]

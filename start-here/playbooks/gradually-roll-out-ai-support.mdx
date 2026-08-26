@@ -1,0 +1,53 @@
+---
+title: "Gradually roll out AI support"
+description: "Limit the first live replies by topic, audience, time, or number of replies."
+---
+
+Start with Notes, then allow direct replies within one clear boundary. Expand that boundary after the replies meet your quality target.
+
+| Method | Best for | Supported helpdesks | Add-on cost |
+| --- | --- | --- | --- |
+| Note replies | Testing real tickets with agent review | All listed helpdesks except Zendesk Messaging | None |
+| AI Tagging | Releasing a few low-risk topics | Intercom, Zendesk tickets, Freshdesk, Freshchat, Gorgias | $0.05 per tag or field per ticket |
+| Helpdesk routing | Releasing a customer group or brand | Intercom chat, Zendesk tickets, Freshdesk, Freshchat, HubSpot chat | None |
+| First reply only | Limiting the AI agent to one email reply | Zendesk tickets, Freshdesk, Gorgias email | None |
+
+## Follow a controlled rollout
+
+1. Set a target for answer quality, AI resolution, or reviewed replies.
+2. Start with Note replies so an agent reviews every answer.
+3. Review the replies in **Improve > Inspect & Logs**.
+4. Fix knowledge gaps, guidance, and poor source content.
+5. Enable direct replies for one low-risk topic, audience, or time window.
+6. Review that group against the same target.
+7. Add one new topic or audience group at a time.
+
+Do not widen the rollout when the current group does not meet your target.
+
+## Limit direct replies by topic
+
+Use AI Tagging to allow direct replies for proven topics. Keep other topics in Note mode or block them.
+
+AI Tagging does not support Zendesk Messaging or HubSpot. Read [Prevent AI replies to certain topics](/start-here/playbooks/prevent-ai-replies-to-certain-topics).
+
+## Limit direct replies by audience
+
+Change the workflow, trigger, automation, or chatflow that sends conversations to My AskAI. Read [Prevent AI replies to certain customers or brands](/start-here/playbooks/prevent-ai-replies-to-certain-customers-or-brands).
+
+## Use a short live window
+
+Turn on direct replies for a quiet period when your team can monitor the helpdesk. Turn direct replies off at the end of the test window.
+
+Use this method only when a person owns the start time, the end time, and the review.
+
+## Reply to the first message only
+
+Select **Reply to 1st message only** for Zendesk tickets, Freshdesk, or Gorgias email. The AI agent replies to the first customer message, then hands later messages to your team.
+
+Check the setup page for [Zendesk tickets](/features/channels/zendesk/zendesk-tickets), [Freshdesk](/features/channels/freshdesk), or [Gorgias](/features/channels/gorgias) before you enable this option.
+
+## Related playbooks
+
+- [Test before going live](/start-here/playbooks/test-before-going-live)
+- [Prevent AI replies to certain topics](/start-here/playbooks/prevent-ai-replies-to-certain-topics)
+- [Prevent AI replies to certain customers or brands](/start-here/playbooks/prevent-ai-replies-to-certain-customers-or-brands)

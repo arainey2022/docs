@@ -1,0 +1,92 @@
+---
+title: "Change ticket status or assignment after an AI action"
+description: "Use My AskAI tags and properties to run helpdesk workflows after a reply, handover, or blocked topic."
+---
+
+First, identify the signal that your helpdesk receives. Read [See what the AI agent did to a ticket](/start-here/playbooks/see-what-the-ai-agent-did-to-a-ticket) for the exact tags and properties.
+
+Add each new rule after the My AskAI rule. Add a condition or action that prevents the new rule from running more than once.
+
+## Intercom
+
+For a handover, use the built-in assignment setting:
+
+1. In the Dashboard, go to **Helpdesk & Channels > Intercom**.
+2. Find **Assign to Team Inbox on escalation**.
+3. Select the Intercom team inbox.
+4. Save the setting.
+
+For other actions, create an Intercom workflow that waits for three minutes and then checks the tag:
+
+- Use `AI human handover` after a handover.
+- Use `AI topic blocked` after a blocked topic.
+
+After the tag check, assign the conversation, change its priority, or run another Intercom action. Read [Run an Intercom workflow after a handover](/features/channels/intercom/human-escalation-workflows).
+
+Direct AI replies remain unassigned in Intercom.
+
+## Zendesk tickets
+
+Create a Zendesk trigger for each result that needs an action:
+
+- Handover: require `human-handover-requested`.
+- Topic blocked: require `ai-agent-tag-blocked`.
+- Direct reply: require `ai-agent-replied` and exclude `human-handover-requested`.
+
+Place each trigger after the My AskAI trigger. Use the trigger action to change the status, group, assignee, or priority.
+
+Add a condition that becomes false after the first run. This condition prevents a later human update from running the trigger again.
+
+## Zendesk Messaging
+
+AI-agent tickets are read-only until Zendesk escalates them to a person. Normal triggers cannot change an AI-agent ticket.
+
+After handover, use the `human-handover-requested` tag in a normal Zendesk trigger. AI Tagging and Note replies are not available for Zendesk Messaging.
+
+## Freshdesk
+
+Create **Ticket Updates** automations after the My AskAI automation:
+
+- Handover: require `human-handover-requested`.
+- Topic blocked: require `ai-agent-tag-blocked`.
+- Direct reply: require `ai-agent-replied` and exclude `human-handover-requested`.
+
+Use the automation action to change the status, group, assignee, or priority. Add a condition that prevents a later human update from running the automation again.
+
+## Freshchat
+
+Create the `ai_chat_status` conversation property before you create an automation. Read [Freshchat](/features/channels/freshchat) for the property setup.
+
+Use one of these values as the automation condition:
+
+- `human-handover-requested`
+- `ai-agent-tag-blocked`
+- `ai-agent-replied`
+
+Use a Conversation Assignment Rule for assignment changes. For other ticket actions, install [Freshworks Advanced Automations](https://www.freshworks.com/apps/advanced_automations/).
+
+## Gorgias
+
+In Gorgias, go to **Workflows > Rules > Create custom rule**. Use the My AskAI tag as the rule condition:
+
+- Handover: require `human-handover-requested`.
+- Topic blocked: require `ai-agent-tag-blocked`.
+- Direct reply: require `ai-agent-replied` and exclude `human-handover-requested`.
+
+Use the rule to assign a team, assign an agent, change the status, or add another tag. Add a condition or marker tag that prevents the rule from running twice.
+
+Read the [Gorgias Rules guide](https://docs.gorgias.com/en-US/create-rules-to-take-automatic-actions-on-tickets-81746).
+
+## HubSpot
+
+For direct replies, the AI agent assigns the conversation to itself. On handover, the AI agent unassigns itself.
+
+If your HubSpot plan supports conversation workflows, use a workflow to assign the conversation to an inbox or owner. Read [Assign a HubSpot conversation owner in a workflow](https://knowledge.hubspot.com/inbox/assign-a-conversation-owner-in-a-workflow).
+
+HubSpot does not support AI Tagging.
+
+## Related playbooks
+
+- [See what the AI agent did to a ticket](/start-here/playbooks/see-what-the-ai-agent-did-to-a-ticket)
+- [Auto-close or archive AI-handled tickets](/start-here/playbooks/auto-close-or-archive-ai-handled-tickets)
+- [Prevent AI replies to certain topics](/start-here/playbooks/prevent-ai-replies-to-certain-topics)

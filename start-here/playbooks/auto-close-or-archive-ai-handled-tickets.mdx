@@ -1,0 +1,127 @@
+---
+title: "Auto-close or archive AI-handled tickets"
+description: "Close inactive tickets after an AI reply without closing handovers, blocked topics, or Notes."
+---
+
+<Warning>
+The `ai-agent-replied` tag means that the AI agent sent a reply. It does not mean that the customer confirmed a resolution. Always use an inactivity period. Exclude handovers, blocked topics, and Note replies.
+</Warning>
+
+## Intercom, Freshchat, and HubSpot
+
+Use the My AskAI auto-close setting for these helpdesks.
+
+1. In the Dashboard, go to **Helpdesk & Channels**.
+2. Open Intercom, Freshchat, or HubSpot.
+3. Find **Auto-close inactive conversations**.
+4. Turn on the setting.
+5. Set the inactivity period.
+6. Add a closing message when the setting provides this option.
+7. Test a direct reply, a customer follow-up, and a handover.
+
+The timer starts again after each AI reply. My AskAI does not close a conversation that it has transferred to a person.
+
+For HubSpot, choose a longer timer if customers cannot reply to closed conversations in your setup.
+
+Echo cannot change the auto-close setting.
+
+## Zendesk tickets
+
+Use one trigger to start the timer and one automation to solve the inactive ticket.
+
+### Start the timer
+
+1. In Zendesk Admin Center, go to **Objects and rules > Business rules > Triggers**.
+2. Create the trigger after the My AskAI trigger.
+3. Require the `ai-agent-replied` tag.
+4. Exclude `human-handover-requested` and `ai-agent-tag-blocked`.
+5. Require a status category below **Solved**.
+6. Set the status to **Pending**.
+
+### Solve the inactive ticket
+
+1. Go to **Objects and rules > Business rules > Automations**.
+2. Create an inactivity automation.
+3. Require the **Pending** status.
+4. Require the `ai-agent-replied` tag.
+5. Exclude `human-handover-requested` and `ai-agent-tag-blocked`.
+6. Require **Hours since pending** to be greater than your inactivity period.
+7. Set the status to **Solved**.
+
+Keep Zendesk's standard automation that closes tickets after they have been solved. A customer reply reopens a Solved ticket. Read [How Zendesk automations work](https://support.zendesk.com/hc/en-us/articles/4408832701850-About-automations-and-how-they-work).
+
+## Zendesk Messaging
+
+Zendesk AI-agent tickets are read-only. Normal triggers and automations do not run on them. The standard **Close ticket 4 days after status is set to solved** automation is the only automation that works on these tickets.
+
+If you need a shorter close period, change **Hours since solved** in that standard automation. Closing the ticket returns control to the AI agent.
+
+<Warning>
+This standard automation can also close other Solved tickets. Check its full conditions before you change the time.
+</Warning>
+
+Read [My AskAI Zendesk Messaging setup](/features/channels/zendesk/zendesk-messaging) and [Zendesk AI-agent ticket behavior](https://support.zendesk.com/hc/en-us/articles/9204149016346-Understanding-AI-agent-tickets-for-AI-agent-only-conversations).
+
+## Freshdesk
+
+Use a ticket-update rule to set the eligible ticket to Pending. Use an hourly rule to resolve it after inactivity.
+
+### Start the timer
+
+1. In Freshdesk, go to **Admin > Workflows > Automations > Ticket Updates**.
+2. Add a rule after the My AskAI rule.
+3. Require the `ai-agent-replied` tag.
+4. Exclude `human-handover-requested` and `ai-agent-tag-blocked`.
+5. Exclude tickets that are already **Resolved** or **Closed**.
+6. Set the status to **Pending**.
+
+Keep the handover rule after this rule. The handover rule must set handed-over tickets to **Open** so that it cancels the inactivity timer.
+
+### Resolve the inactive ticket
+
+1. Go to **Admin > Workflows > Automations > Hourly Triggers**.
+2. Add a rule that requires the **Pending** status.
+3. Require **Hours since an agent responded** to be greater than your inactivity period.
+4. Set the status to **Resolved**.
+
+Freshdesk Hourly Triggers cannot check tags. The Pending status carries the result from the first rule. Freshdesk's standard rule closes Resolved tickets after 48 hours without activity.
+
+Read [Freshdesk Hourly Triggers](https://support.freshdesk.com/support/solutions/articles/37615-creating-an-automation-rule-that-runs-on-time-triggers).
+
+## Gorgias
+
+Gorgias Rules do not have a normal elapsed-time trigger. Use a marker tag and a snooze timer.
+
+### Rule 1: Start the timer
+
+Use **Ticket Updated** as the event. Require all of these conditions:
+
+- **Message From Agent** is true.
+- **Message Public** is true.
+- The ticket is Open.
+- The ticket has `ai-agent-replied`.
+- The ticket does not have `human-handover-requested`.
+- The ticket does not have `ai-agent-tag-blocked`.
+- The ticket does not have `myaskai-auto-close-pending`.
+
+Add `myaskai-auto-close-pending`, then snooze the ticket for your inactivity period.
+
+### Rule 2: Cancel the timer
+
+Use **New Message In Ticket** as the event. Require **Message From Agent** to be false. Remove `myaskai-auto-close-pending`.
+
+Gorgias reopens a snoozed or closed ticket when the customer replies.
+
+### Rule 3: Close the ticket
+
+Use **Ticket Snooze Delay Ends** as the event. Require `myaskai-auto-close-pending`. Exclude `human-handover-requested` and `ai-agent-tag-blocked`.
+
+Set the status to **Closed**, then remove `myaskai-auto-close-pending`.
+
+Read the [Gorgias Rules guide](https://docs.gorgias.com/en-US/create-rules-to-take-automatic-actions-on-tickets-81746) and [Gorgias rule conditions and actions](https://docs.gorgias.com/en-US/gorgias-rule-builder-variables-and-conditions-81882).
+
+## Related playbooks
+
+- [See what the AI agent did to a ticket](/start-here/playbooks/see-what-the-ai-agent-did-to-a-ticket)
+- [Change ticket status or assignment after an AI action](/start-here/playbooks/change-ticket-status-or-assignment-after-an-ai-action)
+- [Gradually roll out AI support](/start-here/playbooks/gradually-roll-out-ai-support)

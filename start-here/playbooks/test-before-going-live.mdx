@@ -1,0 +1,82 @@
+---
+title: "Test before going live"
+description: "Test repeatable questions, real helpdesk tickets, and a controlled set of direct replies."
+---
+
+Use several test methods because each method checks a different part of the setup. Start with repeatable questions, then test the helpdesk connection, then allow a small set of direct replies.
+
+### Days 1 to 3
+
+Use Test and the Dashboard widget. Check answer content and guidance.
+
+### Days 3 to 10
+
+Use Note replies. Check real tickets and helpdesk behavior without customer-visible replies.
+
+### Day 10 onward
+
+Use controlled direct replies. Check live customer behavior within a clear limit.
+
+## Test a repeatable question set
+
+In the Dashboard, go to **Improve > Test**.
+
+1. Use tickets imported during onboarding, add questions manually, or upload a one-column CSV.
+2. Upload no more than 50 questions in one CSV.
+3. Build a set of 50 to 150 real support questions as a starting point.
+4. Score whether you would send each answer to a customer.
+5. Record what needs to change.
+6. Update Knowledge, Guidance, or Custom Answers.
+7. Refresh the affected answers and compare the result.
+
+Read [Test](/features/improve/test) for the full feature guide.
+
+## Use the Dashboard widget for one question
+
+Use the Dashboard widget for a quick check while you set up the agent. Use **Improve > Test** when you need a repeatable set or more than five questions.
+
+Check both Public and Private content behavior when it applies to your agent. Read [Public and Private modes](/features/private-internal-mode).
+
+## Test real tickets with Notes
+
+Note mode writes a proposed answer that only your agents can see. It tests the connected helpdesk without sending an AI reply to the customer.
+
+Note replies support Intercom, Zendesk tickets, Gorgias, Freshdesk, Freshchat, and HubSpot. Zendesk Messaging does not support Note replies.
+
+Review the Note, its sources, and the ticket context. Fix the agent before you copy or send a poor answer.
+
+## Release a few topics
+
+Use AI Tagging to allow direct replies for a small set of low-risk topics. Keep other topics in Note mode or block them.
+
+AI Tagging supports Intercom, Zendesk tickets, Freshdesk, Freshchat, and Gorgias. It does not support Zendesk Messaging or HubSpot.
+
+Review the replies in **Improve > Inspect & Logs**. Add another topic only after the current topics meet your target.
+
+Read [Prevent AI replies to certain topics](/start-here/playbooks/prevent-ai-replies-to-certain-topics).
+
+## Use a short direct-reply window
+
+Turn on direct replies for a quiet period when your support team can monitor the conversations. Turn them off at the agreed end time.
+
+Record who owns the test, the start time, the end time, and the review criteria.
+
+## Reply to the first message only
+
+Use **Reply to 1st message only** for Zendesk tickets, Freshdesk, or Gorgias email. The AI agent replies once, then hands later customer messages to your team.
+
+This option does not support Intercom email or chat.
+
+Check the setup page for [Zendesk tickets](/features/channels/zendesk/zendesk-tickets), [Freshdesk](/features/channels/freshdesk), or [Gorgias](/features/channels/gorgias).
+
+## Test with Copilot
+
+Use the Chrome extension when an agent must control every message. The extension reads the ticket history and inserts a draft in the reply box. The customer sees nothing until the agent sends the draft.
+
+The draft reply button supports Intercom, Zendesk, Gorgias, and Freshdesk. Read [Copilot](/features/channels/chrome-extension).
+
+## Related playbooks
+
+- [Gradually roll out AI support](/start-here/playbooks/gradually-roll-out-ai-support)
+- [Improve a specific AI response](/start-here/playbooks/improve-a-specific-ai-response)
+- [Prevent AI replies to certain topics](/start-here/playbooks/prevent-ai-replies-to-certain-topics)

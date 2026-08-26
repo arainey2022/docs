@@ -1,0 +1,88 @@
+---
+title: "Prevent AI replies to certain customers or brands"
+description: "Limit AI support by customer group, brand, inbox, or known email details."
+---
+
+Change your helpdesk routing when it already contains the customer or brand information that you need. The helpdesk then sends only eligible conversations to My AskAI.
+
+Use an [email filter](/features/spam-filters) when you only need to block known sender addresses or domains.
+
+## Intercom
+
+### Messenger
+
+Use an Intercom workflow for each audience. Show the button that starts the AI path only to the audience that can use the AI agent.
+
+1. Create or edit the audience-specific workflow in Intercom.
+2. Add a button such as **Ask a question**.
+3. Use the exact button text as the My AskAI trigger phrase.
+4. Apply Intercom audience conditions to the workflow.
+5. Test one user who matches the conditions and one user who does not.
+
+Read [Add the AI agent to an Intercom workflow](/features/channels/intercom#how-can-i-add-my-agent-as-part-of-a-triaged-workflow-in-intercom).
+
+### Email
+
+Intercom email does not have a self-service audience-routing option in My AskAI. Use email filters for known senders or contact My AskAI support to filter specific inboxes.
+
+## Zendesk
+
+### Tickets
+
+The **Notify My AskAI** trigger controls which tickets Zendesk sends to My AskAI.
+
+1. In Zendesk Admin Center, open **Objects and rules > Business rules > Triggers**.
+2. Open the My AskAI notification trigger.
+3. Add a condition for the required brand, organization, user group, or inbox.
+4. Save the trigger.
+5. Test one matching ticket and one blocked ticket.
+
+Read [Zendesk tickets](/features/channels/zendesk/zendesk-tickets) for the full integration setup.
+
+### Messaging
+
+Zendesk Messaging does not support customer-group routing through My AskAI. Use separate Messaging channels for separate brands, or contact My AskAI support.
+
+## Freshdesk
+
+My AskAI creates one automation for new tickets and one automation for updated tickets. Add the same audience conditions to both automations.
+
+1. In Freshdesk, open **Admin > Workflows > Automations**.
+2. Edit the My AskAI rule under **Ticket Creation**.
+3. Add the required brand, group, product, or inbox condition.
+4. Add the same condition to the My AskAI rule under **Ticket Updates**.
+5. Test both a new ticket and an updated ticket.
+
+If you update only one automation, an excluded ticket can still reach My AskAI through the other automation.
+
+## Freshchat
+
+Use a separate chatbot flow for each audience. Assign each flow to the correct widget or audience rules.
+
+1. Create the audience-specific chatbot flow.
+2. Add a button that sends the My AskAI trigger phrase.
+3. Assign the flow to the correct widget.
+4. Apply the Freshchat audience conditions.
+5. Test a matching user and an excluded user.
+
+Read [Add the AI agent to a Freshchat chatbot](/features/channels/freshchat#how-can-i-add-my-agent-as-part-of-a-triaged-chatbot-in-freshchat).
+
+## Gorgias
+
+- To limit email replies by support inbox, add the permitted inbox under **AI Agent Setup**.
+- To block known customer addresses or domains, use [email filters](/features/spam-filters).
+- Gorgias chat does not support customer-group routing through My AskAI. Use topic rules or contact My AskAI support.
+
+## HubSpot
+
+- For chat, use a separate chatflow and HubSpot targeting rules for each audience.
+- For email, add the permitted support inboxes under **AI Agent Setup**.
+- To block known customer addresses or domains, use [email filters](/features/spam-filters).
+
+Read [Add the AI agent to a HubSpot chatflow](/features/channels/hubspot#how-can-i-add-my-support-agent-as-part-of-a-triaged-chatflow-in-hubspot).
+
+## Related playbooks
+
+- [Prevent AI replies to certain topics](/start-here/playbooks/prevent-ai-replies-to-certain-topics)
+- [Gradually roll out AI support](/start-here/playbooks/gradually-roll-out-ai-support)
+- [Set up AI agents for multiple brands](/start-here/playbooks/set-up-ai-agents-for-multiple-brands)
