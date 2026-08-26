@@ -1,0 +1,89 @@
+---
+title: "How to add My AskAI to HubSpot without Breeze"
+description: "Connect My AskAI to HubSpot Service Hub, start with note replies and turn on direct chat or email replies after testing."
+hidden: true
+---
+
+# How to add My AskAI to HubSpot without Breeze
+
+You can use My AskAI in HubSpot Service Hub without using Breeze as the support agent. My AskAI connects to HubSpot conversations and starts with private note replies.
+
+## Important limit
+
+The My AskAI integration works with HubSpot Service Hub conversations. It does not create HubSpot Ticketing System tickets.
+
+## What you need
+
+- A HubSpot Super Admin to install the app.
+- A paid My AskAI plan.
+- An authenticated HubSpot chat or email channel.
+- A separate HubSpot account for the AI sender if you want a separate name and image.
+
+The app requests `conversations.read` and `conversations.write`. It does not receive HubSpot Super Admin rights.
+
+## Step 1: Connect HubSpot
+
+In My AskAI, go to **Channels \> HubSpot** and select **Connect your HubSpot account**. Sign in, choose the correct HubSpot account and confirm.
+
+<Frame>
+  ![HubSpot account selection and approval](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/image-532.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=ba684a1dbaeee7c7dd086c5fbe2b4384)
+</Frame>
+
+## Step 2: Keep note replies on
+
+By default, chat, social and email use note replies. Test a conversation and confirm that agents can see the draft.
+
+<Frame>
+  ![My AskAI note reply in HubSpot](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/image-533.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=c0bf5bcc282950bb34b90c33d838e563)
+</Frame>
+
+## Step 3: Choose reply modes by channel
+
+Go to **Dashboard \> Helpdesk & Channels \> HubSpot \> Type of Replies**. You can use note replies for email and direct replies for chat, or the reverse.
+
+<Frame>
+  ![Separate HubSpot reply modes by channel](https://mintcdn.com/myaskai/rqZPZCBQmxu6qsJ1/images/image-2.png?fit=max&auto=format&n=rqZPZCBQmxu6qsJ1&q=85&s=aacb0670b0dfb2c1d68b942897b33921)
+</Frame>
+
+## Step 4: Prepare direct chat replies
+
+Before you turn on direct replies:
+
+1. Disable Knowledge Base Search in competing HubSpot chatflows where it would answer first.
+2. Set the chat as available 24/7 if that matches your support policy.
+3. Remove a misleading typical reply time.
+
+<Frame>
+  ![Disable HubSpot knowledge-base search](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/image-400.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=d54d686cd1b0e60562546ca1898337ad)
+</Frame>
+
+## Step 5: Turn on direct replies
+
+In **Channels \> HubSpot**, turn on **Direct replies** for the selected channel. The AI account will assign the conversation to itself while it is handling it.
+
+<Frame>
+  ![HubSpot conversation assigned to AI account](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/image-393.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=3926b76d02f46c98bf7cf8135d9286c2)
+</Frame>
+
+## Step 6: Test handoff
+
+Ask to talk to a person. Confirm that the AI adds a handoff note, gives a summary, unassigns itself and stops replying.
+
+<Frame>
+  ![HubSpot human-handoff note](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/image-534.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=c9be65c0e13a57681088a52725a8d081)
+</Frame>
+
+Once a HubSpot conversation is handed to a person, it cannot be passed back to the AI agent.
+
+## Pause or roll back
+
+- Add `Stop AI replies` as a note to stop one direct-reply conversation.
+- Add `Stop writing AI notes` as a comment to stop note drafts. Do not send it as a customer reply.
+- Pause all AI replies under **Channels \> HubSpot \> Pause AI agent**.
+
+## Related documentation
+
+- [Full HubSpot reference](/features/channels/hubspot)
+- [Testing](/start-here/testing)
+- [Human escalation](/features/human-escalation)
+- [Escalation data collection](/features/escalation-data-collection)

@@ -1,0 +1,96 @@
+---
+title: "How to add My AskAI to Intercom without Fin"
+description: "In addition to webpages and files, you can connect your cloud-based knowledge sources such as Google Drive, Notion, or Confluence (+ more) to train your AI agent so it can better answer questions."
+hidden: true
+---
+
+# How to add My AskAI to Intercom without Fin
+
+You can keep Intercom as your helpdesk and use My AskAI instead of Fin for AI replies. My AskAI connects through the Intercom app and starts with private note replies by default.
+
+You need an Intercom account, a paid My AskAI plan and permission to approve the app. No code is required.
+
+## Before you start
+
+- Turn off Fin for the conversations where My AskAI will reply.
+- Connect your help content to My AskAI.
+- Decide whether you want notes, direct replies or both.
+- Choose a test inbox or workflow.
+
+## Step 1: Open the Intercom connection
+
+In My AskAI, go to **Channels** and select **Intercom**.
+
+## Step 2: Authorize the app
+
+Select **Connect your Intercom account**. Review the permissions and select **Authorize access**.
+
+<Frame>
+  ![Intercom app authorization screen](https://mintcdn.com/myaskai/rqZPZCBQmxu6qsJ1/images/image-344.png?fit=max&auto=format&n=rqZPZCBQmxu6qsJ1&q=85&s=ec79e39e25a0402ea7f814043913584b)
+</Frame>
+
+## Step 3: Test note replies
+
+Keep **Draft note replies** on. Start a test conversation in Intercom. Confirm that the My AskAI reply appears as a note that only agents can see.
+
+<Frame>
+  ![My AskAI note reply inside Intercom](https://mintcdn.com/myaskai/rqZPZCBQmxu6qsJ1/images/image-113.png?fit=max&auto=format&n=rqZPZCBQmxu6qsJ1&q=85&s=744a8f46d75ceff6d79bf808f01cb905)
+</Frame>
+
+## Step 4: Set human handoff
+
+Choose the team inbox that will receive escalated conversations. Go to **Helpdesk & Channels \> Intercom**, then select an inbox under **Assign to Team Inbox on escalation**.
+
+<Frame>
+  ![Intercom escalation inbox setting](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/image-550.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=a78d9a3e13326a3efa8afc18a4a0bb88)
+</Frame>
+
+## Step 5: Turn on direct replies
+
+After your tests pass, go to **Channels \> Intercom** and turn on **Direct replies**. My AskAI will then answer in the existing Intercom Messenger.
+
+<Frame>
+  ![AI reply in Intercom Messenger](https://downloads.intercomcdn.com/i/o/987939190/c785d586083ee92b2f11751b/chatbot.png)
+</Frame>
+
+## Step 6: Configure email if required
+
+For Intercom email replies:
+
+1. Disable Intercom email auto-replies under **Settings \> Channels \> Email \> Auto-replies**.
+2. In My AskAI, go to **Dashboard \> Channels \> Intercom \> Email replies**.
+3. Turn on email replies.
+4. Select the sender account. Use a separate team or AI account where possible.
+
+**SCREENSHOT NEEDED:** Current Intercom email-reply configuration in My AskAI.
+
+## Test before launch
+
+1. Check an answer from help-center knowledge.
+2. Check a question that needs a follow-up.
+3. Ask to talk to a person and confirm the team-inbox assignment.
+4. Have an agent reply and confirm that the agent takes control.
+5. Check email and Messenger separately if both are active.
+
+## Stop or roll back
+
+- To stop notes for one conversation, add an Intercom note with `Stop AI replies`.
+- To take control, reply as an Intercom agent.
+- To return control to the AI, use the approved hand-back macro described in the full Intercom reference.
+- To pause all replies, go to **Channels \> Intercom** and turn on **Pause AI agent**.
+
+## Common problems
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| Two AI systems answer | Fin is still active | Turn off Fin in the same conversation or workflow scope |
+| No note appears | Notes are off or the app is not authorized | Check the connection and note-reply setting |
+| Email does not send | The sender is not authenticated | Use an authenticated Intercom email and a valid team account |
+| Handoff goes to the wrong team | No escalation inbox is selected | Select the correct team inbox in My AskAI |
+
+## Related documentation
+
+- [Full Intercom reference](/features/channels/intercom)
+- [Intercom human-escalation workflows](/features/channels/intercom/human-escalation-workflows)
+- [Testing](/start-here/testing)
+- [Human escalation](/features/human-escalation)

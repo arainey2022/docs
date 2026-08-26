@@ -1,0 +1,83 @@
+---
+title: "How to add My AskAI to Gorgias without Gorgias AI"
+description: "In addition to webpages and files, you can connect your cloud-based knowledge sources such as Google Drive, Notion, or Confluence (+ more) to train your AI agent so it can better answer questions."
+hidden: true
+---
+
+# How to add My AskAI to Gorgias without Gorgias AI
+
+You can keep Gorgias for email, tickets and chat while My AskAI supplies the AI replies. Install the My AskAI app, connect your Gorgias domain and start with internal notes.
+
+## Before you start
+
+- Use a paid My AskAI plan.
+- Install My AskAI from the Gorgias App Store.
+- Find the original Gorgias subdomain in your inbox URL.
+- Connect knowledge to My AskAI.
+- Decide which email and chat queues will take part in the test.
+
+## Step 1: Install and connect
+
+Install My AskAI in the Gorgias workspace. In My AskAI, go to **Channels \> Gorgias** and enter the Gorgias subdomain. Select **Connect your Gorgias account**.
+
+<Frame>
+  ![Gorgias connection in My AskAI](https://mintcdn.com/myaskai/rqZPZCBQmxu6qsJ1/images/image-23.png?fit=max&auto=format&n=rqZPZCBQmxu6qsJ1&q=85&s=90ce5aeac09acae424439088cebdd172)
+</Frame>
+
+## Step 2: Keep notes on for email and chat
+
+Email and chat have separate reply settings. Keep both on **Internal Notes** for the first test.
+
+<Frame>
+  ![My AskAI internal note in Gorgias](https://mintcdn.com/myaskai/rqZPZCBQmxu6qsJ1/images/image-16.png?fit=max&auto=format&n=rqZPZCBQmxu6qsJ1&q=85&s=e320015637a5d16252ad57af5934908d)
+</Frame>
+
+## Step 3: Disable duplicate auto-replies
+
+Turn off Gorgias email and chat auto-replies, including expected-wait-time messages, for the routes that My AskAI will handle.
+
+<Frame>
+  ![Gorgias auto-reply settings](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/image-62.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=47cd102fc18f883fc6f86ef5f7fce812)
+</Frame>
+
+## Step 4: Test email and chat separately
+
+Send one email ticket and one chat message. Confirm that each receives a note and gets the `ai-agent-replied` tag.
+
+## Step 5: Test handoff
+
+Ask to speak to a person. Confirm that Gorgias adds `human-handover-requested`, creates an internal note and stops further AI replies.
+
+<Frame>
+  ![Human handoff in Gorgias chat](https://mintcdn.com/myaskai/rqZPZCBQmxu6qsJ1/images/image-19.png?fit=max&auto=format&n=rqZPZCBQmxu6qsJ1&q=85&s=a67ec77c0da64596ff7b0a07e6d48175)
+</Frame>
+
+## Step 6: Turn on direct replies
+
+Turn on direct replies for email or chat only after that channel passes testing. Select first-message-only for a low-risk email deployment.
+
+<Frame>
+  ![Gorgias email direct-reply setting](https://mintcdn.com/myaskai/rqZPZCBQmxu6qsJ1/images/image-17.png?fit=max&auto=format&n=rqZPZCBQmxu6qsJ1&q=85&s=fc2200acabc6d3de9ae2cb418ee869ac)
+</Frame>
+
+<Frame>
+  ![Gorgias chat direct-reply setting](https://mintcdn.com/myaskai/rqZPZCBQmxu6qsJ1/images/image-18.png?fit=max&auto=format&n=rqZPZCBQmxu6qsJ1&q=85&s=9e27a352c9824dc1262882f0ace3c3f1)
+</Frame>
+
+## Important limit
+
+My AskAI cannot currently use Gorgias triage steps or flows. Use email account, brand and reply-mode controls instead.
+
+## Pause or roll back
+
+- For a direct-reply conversation, reply as a person.
+- For notes, add `Stop writing AI notes` as an internal note.
+- Pause email and chat separately under **Channels \> Gorgias**.
+- Disconnect the integration from the same connection page if required.
+
+## Related documentation
+
+- [Full Gorgias reference](/features/channels/gorgias)
+- [Testing](/start-here/testing)
+- [Human escalation](/features/human-escalation)
+- [Escalation data collection](/features/escalation-data-collection)

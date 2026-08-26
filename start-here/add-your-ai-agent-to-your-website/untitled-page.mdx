@@ -1,0 +1,90 @@
+---
+title: "How to add My AskAI to Freshdesk without Freddy AI"
+description: "Connect My AskAI to Freshdesk Tickets with an API key, test internal notes and turn on direct replies safely."
+hidden: true
+---
+
+# How to add My AskAI to Freshdesk without Freddy AI
+
+You can use My AskAI inside Freshdesk Tickets without using Freddy AI. The connection uses your original Freshdesk domain and an agent API key. It starts with internal notes by default.
+
+## What you need
+
+- A paid My AskAI plan.
+- Your original `yourdomain.freshdesk.com` domain.
+- A Freshdesk agent API key.
+- A separate Freshdesk agent seat for the AI agent, if available.
+- A test email or web form.
+
+## Step 1: Find the Freshdesk API key
+
+In Freshdesk, open **Profile icon \> Profile Settings \> View API Key**. Copy the API key for the account that will send AI replies.
+
+**SCREENSHOT NEEDED:** Current Freshdesk API key location.
+
+## Step 2: Connect Freshdesk
+
+In My AskAI, go to **Channels \> Freshdesk \> Freshdesk Tickets**. Enter the original Freshdesk domain and API key. Select **Connect your Freshdesk account**.
+
+Do not enter a custom branded Freshdesk domain.
+
+## Step 3: Keep Internal Notes on
+
+Leave the reply type on **Internal Notes**. Send a test email or web-form ticket to Freshdesk.
+
+<Frame>
+  ![My AskAI internal note in Freshdesk](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/screenshot-2024-12-18-084143-1.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=d60f54d2dca89631cc31a446b67d8ac7)
+</Frame>
+
+Confirm that the ticket gets an AI note, source links and the `ai-agent-replied` tag.
+
+## Step 4: Limit eligible tickets
+
+My AskAI creates Freshdesk automations for new and updated tickets. Add filters to control the ticket groups, brands, forms or fields that the AI can handle.
+
+<Frame>
+  ![Freshdesk automation conditions](https://mintcdn.com/myaskai/rqZPZCBQmxu6qsJ1/images/image-2-1-1-1-1-1-1-1.png?fit=max&auto=format&n=rqZPZCBQmxu6qsJ1&q=85&s=c81150bb641c9201b65f48a1f5b3beae)
+</Frame>
+
+You can also use Freshdesk AI tagging to block replies for selected tags or topics.
+
+## Step 5: Test handoff
+
+Ask to speak to a person. Confirm that the ticket gets the `human-handover-requested` tag and an internal note.
+
+<Frame>
+  ![Freshdesk AI reply and handoff state](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/screenshot-2024-12-18-084527.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=c488caeb4f6b53ce514f1d1ec05ccfe0)
+</Frame>
+
+Create a Ticket Updates automation that routes this tag to a human agent or group.
+
+## Step 6: Turn on direct replies
+
+When the test set passes, change the reply type to **Reply directly to customers**. Choose first-message-only if you want a smaller first deployment.
+
+<Frame>
+  ![Freshdesk direct reply setting](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/screenshot-2024-12-18-084321.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=74501162f9e1e3bb7c5b0e14b3e13157)
+</Frame>
+
+Disable Freshdesk ticket acknowledgement emails if they would create duplicate replies.
+
+## Test before launch
+
+1. Test an email ticket and a web-form ticket.
+2. Test a blocked tag or field.
+3. Test customer-requested handoff.
+4. Test first-message-only behavior.
+5. Reply as a human and confirm that AI replies stop.
+
+## Pause or roll back
+
+- For one ticket, reply as a person.
+- For all tickets, go to **Channels \> Freshworks \> Freshdesk** and turn on **Pause AI agent**.
+- To disconnect, use **Disconnect Freshdesk Integration** on the same page.
+
+## Related documentation
+
+- [Full Freshdesk reference](/features/channels/freshdesk)
+- [Freshdesk tagging](/features/channels/freshdesk/freshdesk-tagging)
+- [Testing](/start-here/testing)
+- [Human escalation](/features/human-escalation)

@@ -1,0 +1,120 @@
+---
+title: "How to add My AskAI to Zendesk without Zendesk AI"
+description: "In addition to webpages and files, you can connect your cloud-based knowledge sources such as Google Drive, Notion, or Confluence (+ more) to train your AI agent so it can better answer questions."
+hidden: true
+---
+
+# How to add My AskAI to Zendesk without Zendesk AI
+
+You can use My AskAI inside Zendesk without using Zendesk Advanced AI. Keep your Zendesk inbox, triggers, agents and channels. Connect My AskAI as the AI reply layer and start with private internal notes.
+
+Standard connection takes about 10–15 minutes. You need a paid My AskAI plan, a Zendesk Admin account and an available Zendesk agent seat if you want a separate AI identity.
+
+## What you need
+
+- Zendesk Admin access.
+- A My AskAI account with knowledge already connected.
+- Your Zendesk subdomain.
+- An existing Zendesk agent seat or a new seat for the AI agent.
+- Access to a test email address or web form.
+
+## Choose a safe starting mode
+
+| Mode | Who sees the AI reply? | Use it when |
+| --- | --- | --- |
+| Internal Notes | Your support agents only | You are testing quality or want an agent copilot |
+| Direct Replies | The customer | Your test set has passed and handoff rules work |
+| First message only | AI handles the first message; a person handles follow-ups | You want low-risk automation |
+
+If you are not sure, start with Internal Notes and first-message-only handling.
+
+## Step 1: Open the Zendesk connection
+
+In My AskAI, go to **Channels**, select **Zendesk**, then select **Zendesk Tickets**.
+
+## Step 2: Enter your Zendesk subdomain
+
+Enter the original Zendesk subdomain and select **Connect your Zendesk account**.
+
+## Step 3: Approve access
+
+Sign in to Zendesk as an Admin and allow the requested access. My AskAI will show a connection screen and then return you to its setup page.
+
+<Frame>
+  ![Zendesk connection approval screen](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/image-524.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=0b55de077b75501f5a0591ff4629841a)
+</Frame>
+
+## Step 4: Keep Internal Notes on
+
+Leave the reply type set to **Internal Notes**. Choose whether the AI will respond to the first message only or all messages.
+
+<Frame>
+  ![My AskAI Zendesk reply settings](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/image-530.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=8893032399d6f7fd210f80834d9818c7)
+</Frame>
+
+## Step 5: Send a test ticket
+
+Email your Zendesk support address. Confirm that:
+
+1. The ticket is New or Open.
+2. A private AI note appears.
+3. The note contains an answer and source references.
+4. The ticket gets the `ai-agent-replied-note` tag.
+
+<Frame>
+  ![My AskAI internal note in Zendesk](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/image-529.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=84109914215afe945f6303aa229a9670)
+</Frame>
+
+## Step 6: Test handoff
+
+Send a message that asks to talk to a person. Confirm that Zendesk gets the `human-handover-requested` tag and that the human agent receives the conversation context.
+
+<Frame>
+  ![Zendesk handoff tag](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/untitled-36.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=8e36e5acdf1a391ad224175e5b74f49a)
+</Frame>
+
+## Step 7: Turn on direct replies
+
+When your test set passes, change the reply type to **Reply directly to customers**. Choose first-message-only or all-message handling.
+
+<Frame>
+  ![Direct reply setting for Zendesk Tickets](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/image-531.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=9410b143eebc787194465b8feaef2b6f)
+</Frame>
+
+Disable the Zendesk ticket-creation acknowledgement trigger if it would send a duplicate email.
+
+<Frame>
+  ![Zendesk automatic email trigger](https://mintcdn.com/myaskai/jQMqT5axxz3I9e3g/images/untitled-35.png?fit=max&auto=format&n=jQMqT5axxz3I9e3g&q=85&s=5eceedb3dba32e1208a169744c838a59)
+</Frame>
+
+## Test before launch
+
+Use at least these five checks:
+
+1. A common FAQ gets the correct answer and sources.
+2. A missing-answer question hands over correctly.
+3. A customer request for a person hands over correctly.
+4. A human reply stops further AI replies on that ticket.
+5. A ticket outside the allowed channel or tag does not get an AI reply.
+
+## Pause or roll back
+
+- To pause all replies, go to **Channels \> Zendesk \> Zendesk Tickets** and turn on **Pause AI agent**.
+- To stop one ticket, reply to it as a human agent.
+- To disconnect, open the same connection page, select **Disconnect**, and confirm.
+
+## Common problems
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| No note appears | Ticket channel or status does not match the trigger | Check that the ticket is New or Open and inspect the Zendesk trigger |
+| Duplicate customer emails | Zendesk acknowledgement is still active | Disable the automatic ticket-created email trigger |
+| AI replies to the wrong tickets | Trigger conditions are too broad | Add channel, brand, group or tag conditions; do not change other trigger settings |
+| Handoffs stay in the AI queue | No automation uses `human-handover-requested` | Add an automation that returns handed-off tickets to the human queue |
+
+## Related documentation
+
+- [Full Zendesk Tickets reference](/features/channels/zendesk/zendesk-tickets)
+- [Testing](/start-here/testing)
+- [Human escalation](/features/human-escalation)
+- [How to debug an AI answer](/troubleshooting/how-to-debug-an-ai-answer)
