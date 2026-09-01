@@ -422,7 +422,13 @@
                   "features/channels/freshdesk/freshdesk-tagging"
                 ]
               },
-              "features/channels/gorgias",
+              {
+                "group": "Gorgias",
+                "pages": [
+                  "features/channels/gorgias",
+                  "features/channels/gorgias/freshdesk-tagging-2"
+                ]
+              },
               {
                 "group": "HubSpot",
                 "pages": [
