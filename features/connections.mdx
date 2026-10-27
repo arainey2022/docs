@@ -1,6 +1,6 @@
 ---
 title: "Connections"
-description: "In addition to webpages and files, you can connect your cloud-based knowledge sources such as Google Drive, Notion, or Confluence (+ more) to train your AI agent so it can better answer questions."
+description: "Connect a Help Center or another knowledge source to your AI agent."
 ---
 
 <Frame>
@@ -9,7 +9,7 @@ description: "In addition to webpages and files, you can connect your cloud-base
 
 <Snippet file="echo.mdx" />
 
-To add more knowledge (in addition to adding [website content](/features/adding-and-syncing-your-website-content) and [files](/features/file-uploads)) to your AI support agent you can connect your cloud-based knowledge sources.
+To add more knowledge, connect a Help Center or another knowledge source. You can also add [website content](/features/adding-and-syncing-your-website-content) and [files](/features/file-uploads).
 
 <Info>
   Where possible, you should always try and add knowledge using Connections as you will get much better answer quality as a result.
@@ -23,37 +23,60 @@ When in Public mode, your AI support agent will not answer questions that requir
   If files or pages connected are marked "Public" in your My AskAI, no links to internal content will be shared as references when displayed publicly (i.e. as a widget on your site), only when used privately.
 </Info>
 
-### Which knowledge sources do you have connections or integrations with?
+### Which Help Centers can I connect?
 
-You can currently connect the following knowledge sources to your AI agent (you can connect multiple sources at once):
+You can connect these Help Centers:
+
+- Intercom Help Center
+- Zendesk Help Center
+- Freshdesk Help Center
+
+These connections sync only published, public articles. They do not sync private, unpublished, or draft articles.
+
+Help Center connections appear under **Knowledge > Content > Connected Help Centers**. They do not appear in the **New connection** picker.
+
+### Which other knowledge sources can I connect?
+
+You can connect these sources:
 
 - Google Drive
 - Notion
 - Microsoft OneDrive (Personal and Business)
 - Dropbox
-- Zendesk Knowledge Base/Help Center (including behind a login)
-- Intercom Knowledge Base/Help Center (including behind a login)
-- Freshdesk Knowledge Base/Help Center (including behind a login)
-- Sharepoint
+- SharePoint
 - Confluence Knowledge Base
 - Salesforce
 - Shopify pages, products and customer data
 
 More connections are coming soon, please let us know if you have a specific connection you would like to see [by requesting it here](https://feedback.myaskai.com/).
 
-<Warning>
-  Note that unpublished articles in Zendesk will also be synced to your AI agent, if you don't want these to be added to the AI agent's knowledge for public-facing answers, select them by going to Knowledge, clicking on the Zendesk connection and switching the articles to "Private".
-</Warning>
+### Connect a Help Center
 
-### Are unpublished or private Zendesk help articles added to my AI agent?
+During onboarding:
 
-No, by default private and unpublished articles are not used by your AI agent. You will see in your Zendesk help article connection that these are automatically marked as '[Private](https://support.myaskai.com/features/private-internal-mode)', however you can give your AI agent access to them, by toggling them to be 'Public' (this will only make the article visible to the AI agent, it won't make the Zendesk article itself visible).
+1. On the **Knowledge** step, select Intercom, Zendesk, or Freshdesk.
+2. Enter the account details that My AskAI requests.
+3. Approve access to the Help Center.
+4. Wait for My AskAI to sync the published, public articles.
 
-### How do I connect a knowledge source?
+After onboarding:
+
+1. Go to **Knowledge > Content**.
+2. Find **Connected Help Centers**.
+3. Select Intercom, Zendesk, or Freshdesk.
+4. Enter the account details that My AskAI requests.
+5. Approve access to the Help Center.
+6. Wait for My AskAI to sync the published, public articles.
+
+For provider-specific authorization steps, see [Connections authorizations](/features/connections/authorizations).
+
+### Connect another knowledge source
+
+To connect Shopify, use **Knowledge > Content > Connect your store**. For all other sources in the list above:
 
 1. Go to **_Knowledge \> Content \> Connect knowledge sources_**
-2. Click "**\+ Add new connection**".
-3. Click on the [knowledge source](/features/connections#which-knowledge-sources-do-you-have-connections-or-integrations-with) you would like to integrate with e.g. Google Drive, Intercom etc.
+2. Click **New connection**.
+3. Select the [knowledge source](/features/connections#which-other-knowledge-sources-can-i-connect) that you want to connect.
 4. You will then be taken to an authorization screen for the relevant integration.
 5. Select your account or enter your relevant account details, and grant the necessary permissions, for more help on authorizations, look at instructions for the relevant knowledge source here. 
 6. You will then be shown a page or file picker for your integration.
@@ -64,10 +87,6 @@ No, by default private and unpublished articles are not used by your AI agent. Y
 <Info>
   If you select to add a folder or a page with subpages then the connection will sync all files within that folder and any folders (and their content) inside that folder. The same applies for "pages", all linked pages or subpages will also be added.
 </Info>
-
-<Warning>
-  If you "Unpublish" or move an article back into "Draft" in Intercom, Zendesk or Freshdesk, you will also need to delete it from your My AskAI account.
-</Warning>
 
 ### How do I delete an individual page or file? 
 
@@ -226,4 +245,4 @@ If this is an issue, please get in touch with us via chat.
 
 ### What are the file size limitations?
 
-The maximum size of a local file to be uploaded is 10MB (this is a limitation put on us by Google, Microsoft et al and so is not something we can work around unfortunately). 
+The maximum size of a local file to be uploaded is 10MB (this is a limitation put on us by Google, Microsoft et al and so is not something we can work around unfortunately).
