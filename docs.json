@@ -678,11 +678,6 @@
   "search": {
     "prompt": "Search..."
   },
-  "integrations": {
-    "intercom": {
-      "appId": "s8su4f08"
-    }
-  },
   "redirects": [
     {
       "source": "/features/integrations/:slug*",
