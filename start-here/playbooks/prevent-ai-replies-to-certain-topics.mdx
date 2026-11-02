@@ -3,6 +3,9 @@ title: "Prevent AI replies to certain topics"
 description: "Choose which support topics receive a direct reply, a Note, or no AI reply."
 ---
 
+import TaggingRequirements from "/snippets/tagging-requirements.mdx";
+import TagBlocking from "/snippets/tag-blocking.mdx";
+
 Use AI Tagging when you want different reply rules for different topics. Use handover guidance for a short list of escalation scenarios. Use email filters for known senders, domains, or subject text.
 
 | Method | Best for | Result | Add-on cost |
@@ -20,8 +23,12 @@ AI Tagging supports Intercom, Zendesk tickets, Freshdesk, Freshchat, and Gorgias
 1. In the Dashboard, go to **AI Agent Setup > AI Tagging**.
 2. Import a field from your helpdesk, or add the tag values in My AskAI.
 3. Review the description for each value. The description tells the AI agent when to apply the value.
-4. Set each value to allow direct replies, create Notes, or block replies.
+4. Set each value to **Reply** or **Block**. Use **Note reply** for agent review where that option is available.
 5. Test each rule before you enable direct replies.
+
+<TaggingRequirements />
+
+<TagBlocking />
 
 Use the setup method for your helpdesk:
 

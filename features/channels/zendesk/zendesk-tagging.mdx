@@ -3,6 +3,9 @@ title: "Zendesk (Tagging)"
 description: "Automatically tag your tickets and conversations in Zendesk with custom tags and sentiment scores."
 ---
 
+import TaggingRequirements from "/snippets/tagging-requirements.mdx";
+import TagBlocking from "/snippets/tag-blocking.mdx";
+
 <Snippet file="tagging-video.mdx" />
 
 It can take hours of repetitive work to tag and categorize your support tickets and conversations each month.
@@ -18,6 +21,8 @@ You can find the tagging app in the [Zendesk Marketplace here](https://www.zende
 3. If you chose a Custom Field and have one setup in Zendesk already, then we will automatically import your Custom Fields to choose from. Select the one you want to auto-tag and we will import all of your tags for that Custom Field and auto generate a description for each tag.<br /><br />If you chose a Custom Field and don't have one setup in Zendesk already or you chose Tag then you will need to add a list of values/tags and descriptions for those values/tags so the AI knows under which circumstances each value/tag should be applied.<br />
 4. Once you have reviewed the descriptions for each tag and checked they are correct then you can turn on the auto-tagging.
 5. You will then see your tags auto-applied in Zendesk, additionally the tag `ai-agent-tags-applied` will be applied so you know when it has been used.<br />If you feel any tags have been applied incorrectly, review the description for each tag to ensure it is clear.
+
+<TaggingRequirements />
 
 ### **Ho**w much does it cost to automatically tag and get a sentiment score for each ticket or conversation?
 
@@ -57,13 +62,13 @@ For example, you might have "reason for contact" field in Zendesk that your agen
 
 If "unsubscribe" was the tag added by our AI agent, and that tag was on your block list, then the AI wouldn't reply to it and it will force a human handover.
 
-To add a tag to your block list, go to **AI Agent Setup \> Auto-Tagging**, select the Custom Field or Tag that has the tag you want to block, then find the tag and click **Block AI Replies.**
+To add a tag to your block list, go to **AI Agent Setup \> AI Tagging**, select the Custom Field or Tag that has the tag you want to block, then find the tag and click **Block.**
 
 If a ticket isn't replied to because it was blocked the tag `ai-agent-tag-blocked` will also be added to the ticket.
 
 Alternatively, you could set up a triage flow for your AI agent, using rules or triggers within Zendesk for where certain tickets should be routed depending on the "reason for contact".
 
-<Snippet file="tag-blocking.mdx" />
+<TagBlocking />
 
 <Info>
   You can keep receiving AI note replies, even for blocked AI replies, if you want to see how your AI agent would have responded to the ticket.

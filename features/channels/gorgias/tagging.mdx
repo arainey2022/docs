@@ -3,6 +3,9 @@ title: "Gorgias (Tagging)"
 description: "Automatically tag your tickets and emails in Gorgias with custom tags or sentiment scores."
 ---
 
+import TaggingRequirements from "/snippets/tagging-requirements.mdx";
+import TagBlocking from "/snippets/tag-blocking.mdx";
+
 <Snippet file="tagging-video.mdx" />
 
 It can take hours of repetitive work to tag and categorize your support tickets and emails each month.
@@ -12,7 +15,7 @@ But now your AI agent can automatically do this classification and categorizatio
 ### How do I set up automated tagging and sentiment scores in Gorgias?
 
 <Warning>
-  You can only set up a single tag in Gorgias, if you need more than 1, contact us via chat and ask to "speak to a person"
+  You can create one tag group in My AskAI for Gorgias. Add at least two tags to that group.
 </Warning>
 
 1. To set up your tags in Gorgias, go to **AI Agent Setup \> AI Tagging** and click **Add tag.**
@@ -24,6 +27,8 @@ But now your AI agent can automatically do this classification and categorizatio
 If you feel any tags have been applied incorrectly, review the description for each tag to ensure it is clear.
 
 If a tag isn't being applied, first ensure you have clicked 'Save tags to Gorgias'.
+
+<TaggingRequirements />
 
 ### What information does the AI use to tag tickets and chats in Gorgias?
 
@@ -55,7 +60,7 @@ To add a tag to your block list, go to **AI Agent Setup \> AI Tagging**, select 
 
 Alternatively, you could set up a triage flow for your AI agent, using rules or automations within Gorgias for where certain tickets should be routed depending on the "reason for contact".
 
-<Snippet file="tag-blocking.mdx" />
+<TagBlocking />
 
 <Info>
   You can keep receiving AI note replies, even for blocked AI replies, if you want to see how your AI agent would have responded to the ticket.
