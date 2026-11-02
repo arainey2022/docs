@@ -64,6 +64,10 @@ Read [My AskAI Zendesk Messaging setup](/features/channels/zendesk/zendesk-messa
 
 ## Freshdesk
 
+<Info>
+The My AskAI auto-close setting is not yet available in the live dashboard. These instructions apply when the feature is released.
+</Info>
+
 Use **Auto-close inactive tickets** in My AskAI. You do not need a Freshdesk hourly rule for this timer.
 
 1. In your Dashboard, open **Helpdesk & Channels > Freshworks > Freshdesk Tickets**.
@@ -71,7 +75,7 @@ Use **Auto-close inactive tickets** in My AskAI. You do not need a Freshdesk hou
 3. Set the wait in whole hours. The default is **24 hours**.
 4. Test a direct reply, a customer follow-up, and a handover.
 
-The timer starts after a successful public AI answer. A new customer reply, a handover, or a human takeover cancels it. The next successful AI answer starts a new timer. Internal Note replies do not start a timer.
+The timer starts after a successful public AI answer. A new customer reply, a handover, or another agent taking control by replying cancels it. AI-requested handovers also cancel the timer. The next successful AI answer starts a new timer. Internal Note replies do not start a timer.
 
 The ticket must have `ai-agent-replied` and must not have `human-handover-requested`. My AskAI changes the status to **Closed** without an extra message or note.
 
