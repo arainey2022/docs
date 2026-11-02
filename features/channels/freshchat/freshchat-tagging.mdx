@@ -3,6 +3,9 @@ title: "Freshchat (Tagging)"
 description: "Automatically tag your tickets and conversations in Freshchat with custom conversation properties, tags and sentiment scores."
 ---
 
+import TaggingRequirements from "/snippets/tagging-requirements.mdx";
+import TagBlocking from "/snippets/tag-blocking.mdx";
+
 <Snippet file="tagging-video.mdx" />
 
 It can take hours of repetitive work to tag and categorize your support tickets and conversations each month.
@@ -19,6 +22,8 @@ But now your AI agent can automatically do this classification and categorizatio
 2. Select your tag or custom field from the dropdown list of options (imported from Freshchat) and click "Import conversation property"
 3. Once you have reviewed the descriptions for each conversation property and checked they are correct then you can turn on the auto-tagging.
 4. You will then see your tags auto-applied in Freshchat.<br />If you feel any tags have been applied incorrectly, review the description for each tag to ensure it is clear.
+
+<TaggingRequirements />
 
 ### **Ho**w much does it cost to automatically tag and get a sentiment score for each ticket or conversation?
 
@@ -52,7 +57,9 @@ If a conversation isn't replied to because it was blocked (and you have [created
 
 Alternatively, you could set up a triage flow for your AI agent, using rules or automations within Freshchat for where certain tickets should be routed depending on the "reason for contact".
 
-<Snippet file="tag-blocking.mdx" />
+<TagBlocking />
+
+In the Freshchat tagging pop-up, keep at least one conversation property option set to **Reply**. The pop-up does not offer **Note reply** for individual options.
 
 ### What reporting do I have for my tags and sentiment?
 

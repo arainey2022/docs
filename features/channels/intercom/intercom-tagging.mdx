@@ -3,6 +3,9 @@ title: "Intercom (Tagging)"
 description: "Automatically tag your tickets and conversations in Intercom with custom tags and sentiment scores."
 ---
 
+import TaggingRequirements from "/snippets/tagging-requirements.mdx";
+import TagBlocking from "/snippets/tag-blocking.mdx";
+
 <Snippet file="tagging-video.mdx" />
 
 It can take hours of repetitive work to tag and categorize your support tickets and conversations each month.
@@ -19,6 +22,8 @@ But now your AI agent can automatically do this classification and categorizatio
 2. Select your attribute from the dropdown list of options (imported from Intercom) and click "Import attribute"
 3. Once you have reviewed the descriptions for each attribute and checked they are correct then you can turn on the auto-tagging.
 4. You will then see your tags auto-applied in Intercom. <br />If you feel any tags have been applied incorrectly, review the description for each tag to ensure it is clear.
+
+<TaggingRequirements />
 
 ### **Ho**w much does it cost to automatically tag and get a sentiment score for each ticket or conversation?
 
@@ -66,7 +71,9 @@ If a conversation isn't replied to because it was blocked the tag `ai-agent-tag-
 
 Alternatively, you could set up a triage workflow for your AI agent, using rules or triggers within Intercom for where certain conversations should be routed depending on the "reason for contact".
 
-<Snippet file="tag-blocking.mdx" />
+<TagBlocking />
+
+In the Intercom tagging pop-up, keep at least one attribute option set to **Reply**. The pop-up does not offer **Note reply** for individual options.
 
 ### Why aren't my attributes being applied to conversations?
 
