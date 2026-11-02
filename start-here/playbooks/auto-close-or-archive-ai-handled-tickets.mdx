@@ -64,29 +64,24 @@ Read [My AskAI Zendesk Messaging setup](/features/channels/zendesk/zendesk-messa
 
 ## Freshdesk
 
-Use a ticket-update rule to set the eligible ticket to Pending. Use an hourly rule to resolve it after inactivity.
+<Info>
+The My AskAI auto-close setting is not yet available in the live dashboard. These instructions apply when the feature is released.
+</Info>
 
-### Start the timer
+Use **Auto-close inactive tickets** in My AskAI. You do not need a Freshdesk hourly rule for this timer.
 
-1. In Freshdesk, go to **Admin > Workflows > Automations > Ticket Updates**.
-2. Add a rule after the My AskAI rule.
-3. Require the `ai-agent-replied` tag.
-4. Exclude `human-handover-requested` and `ai-agent-tag-blocked`.
-5. Exclude tickets that are already **Resolved** or **Closed**.
-6. Set the status to **Pending**.
+1. In your Dashboard, open **Helpdesk & Channels > Freshworks > Freshdesk Tickets**.
+2. Find **Auto-close inactive tickets** and turn on the toggle.
+3. Set the wait in whole hours. The default is **24 hours**.
+4. Test a direct reply, a customer follow-up, and a handover.
 
-Keep the handover rule after this rule. The handover rule must set handed-over tickets to **Open** so that it cancels the inactivity timer.
+The timer starts after a successful public AI answer. A new customer reply, a handover, or another agent taking control by replying cancels it. AI-requested handovers also cancel the timer. The next successful AI answer starts a new timer. Internal Note replies do not start a timer.
 
-### Resolve the inactive ticket
+The ticket must have `ai-agent-replied` and must not have `human-handover-requested`. My AskAI changes the status to **Closed** without an extra message or note.
 
-1. Go to **Admin > Workflows > Automations > Hourly Triggers**.
-2. Add a rule that requires the **Pending** status.
-3. Require **Hours since an agent responded** to be greater than your inactivity period.
-4. Set the status to **Resolved**.
+New connections and reconnects enable auto-close at 24 hours. Changing the hours applies to the next successful AI answer. Check your settings after a reconnect.
 
-Freshdesk Hourly Triggers cannot check tags. The Pending status carries the result from the first rule. Freshdesk's standard rule closes Resolved tickets after 48 hours without activity.
-
-Read [Freshdesk Hourly Triggers](https://support.freshdesk.com/support/solutions/articles/37615-creating-an-automation-rule-that-runs-on-time-triggers).
+See [Freshdesk auto-close settings](/features/channels/freshdesk#how-do-i-auto-close-inactive-freshdesk-tickets) for the full behaviour and what happens to an existing timer.
 
 ## Gorgias
 

@@ -112,6 +112,36 @@ By default, all messages of the ticket will be replied to, however you can chang
   If you’re using your AI agent to directly reply to users in Freshdesk Tickets, we recommend you disable automatic email replies (for ticket creation acknowledgement), otherwise users will receive multiple emails.
 </Warning>
 
+### How do I auto-close inactive Freshdesk tickets?
+
+<Info>
+  This setting is not yet available in the live dashboard. These instructions apply when the feature is released.
+</Info>
+
+Use **Auto-close inactive tickets** to close a ticket if the customer does not reply after a public AI answer.
+
+1. In your Dashboard, open **Helpdesk & Channels**.
+2. Select **Freshworks**, then **Freshdesk Tickets**.
+3. Find **Auto-close inactive tickets** in the configuration section.
+4. Turn on the toggle.
+5. Enter the number of hours to wait. Use a whole number greater than zero.
+
+A new Freshdesk connection enables auto-close with a **24-hour** default. If your account is already connected, turn on the setting to use it. Reconnecting Freshdesk enables auto-close and resets the timer setting to 24 hours. Check your settings after a reconnect.
+
+<Info>
+  Auto-close applies to direct replies to customers. Internal Note replies do not start a timer. My AskAI closes the ticket without an extra message or note.
+</Info>
+
+The timer starts after each successful public AI answer. A new customer reply cancels the timer. The next successful AI answer starts a new timer. A handover also cancels the timer, including one requested by the AI agent. If another agent takes control by replying, My AskAI cancels the timer.
+
+My AskAI closes the ticket only if it still has `ai-agent-replied` and does not have `human-handover-requested`. Closed tickets, spam, and conversations that are handed over, locked, blocked, or in notes mode do not auto-close.
+
+Changing the hours applies after the next successful AI answer. It does not change a timer that has already started. Turning off auto-close prevents new timers and stops a pending timer from closing the ticket while the setting is off.
+
+If a customer replies after closure, your Freshdesk automation rules control whether the ticket reopens. Check your ticket-reopening rules before you enable auto-close.
+
+For other helpdesks, see [Auto-close or archive AI-handled tickets](/start-here/playbooks/auto-close-or-archive-ai-handled-tickets).
+
 ### How does human escalation work when using the Freshdesk Ticket integration?
 
 <Info>
