@@ -89,9 +89,9 @@ The AI resolved % is then calculated as the number of conversations resolved by 
 
 ### AI CSAT
 
-We use a separate AI model to give every single conversation and ticket a CSAT score.
+We use a separate AI model to assess conversations and tickets.
 
-You can see the prompt used to assess each conversation below (based on the [AXIS framework](https://front.com/blog/ai-experience-impact-score-axis)):
+You can see the CSAT scoring section of the prompt below (based on the [AXIS framework](https://front.com/blog/ai-experience-impact-score-axis)):
 
 ```text
 Review the provided conversation between an AI agent labeled as "assistant" and a customer labeled as "user", and assess the quality and outcome of the interaction based on specific criteria.
@@ -101,23 +101,20 @@ Consider the following elements during your assessment:
 
 # Steps
 1. **Validate Conversation**
-Before performing steps 2, 3 and 4 you must check whether to provide a CSAT score (`ai_csat`). You must assign a CSAT score of "null" (and you can ignore step 2) IF:
+Before performing steps 2 and 3 you must check whether to provide a CSAT score (`ai_csat`). You must assign a CSAT score of "null" (and you can ignore step 2) IF:
      - The user's message is blank or clearly doesn't ask a question.
      - The user's message looks like a spam email or spam message.
      - The conversation consists of a single user question that is responded to by the assistant with a clarifying question that the user does not respond to.
 
 2. **Assess Satisfaction**
-   Assign an appropriate CSAT score (`ai_csat`) to the conversation based on:
-   - Whether the user's primary questions or problems were clearly resolved.
-   - Overall tone of the user during and after the interaction.
-   - Whether the user requested an escalation or handover to a human agent.
-     - Score scale ranges from 1 to 5:
-       - **1:** Very dissatisfied - issues unresolved and the user clearly displays a negative user tone.
-       - **2:** Dissatisfied - issues unresolved, neutral tone, handed over.
-       - **3:** Neutral - issues partially resolved, but with some hesitation or difficulties.
-       - **4:** Satisfied - the user's questions seem to have been answered adequately, assume resolution, even if not explicitly confirmed as resolved.
-       - **5:** Very satisfied - only if the user's issue is clearly resolved AND the user explicitly thanks the assistant subsequently for the resolution provided.
-  - Only consider a user's frustration in your scoring if it has been exacerbated by the assistant, if the user was frustrated to begin with, score the assistant on how it dealt with the situation.
+   Assign an appropriate CSAT score (`ai_csat`) with a generous, outcome-focused assessment of the main help the user requested. Give credit for a useful answer and a workable solution. Assess the main purpose of the conversation rather than counting every minor omission.
+   - **1:** Very dissatisfied. The main issue remains unresolved and the assistant clearly caused or increased the user's negative tone.
+   - **2:** Dissatisfied. Use 2 when a material failure in the assistant's handling leaves the main request blocked and the customer still needs a person to resolve it. If the customer says the help failed, repeats the same unmet request after unusable help, or asks for a person because the help failed, the later transfer does not erase that failure. Keep the lower score unless the assistant corrects the material failure or supplies the missing help. A routine request for a person or frustration with the original problem is insufficient on its own.
+   - **3:** Neutral. Use 3 when there is a specific material shortfall in the main assistance. A generic offer to escalate without a usable route or a concrete next action for this request is partial help. Use 3 if a material part remains unanswered or the reply is irrelevant, empty, or repeatedly asks for clarification without useful help. Silence, no thanks, or the absence of an outcome update is insufficient on its own. Apply step 1 for a single unanswered clarifying question.
+   - **4:** Satisfied. Give 4 when the assistant answers the main request adequately or provides a credible, usable next step. A planned transfer can itself earn 4 when the conversation shows why a person needs to act and the assistant clearly states a next action that fits the main request. The next action can be a direct transfer to a team able to act on this request or concrete directions to the appropriate route. A named department is optional when the purpose and path are clear. Give credit for a stated transfer as a next step; claim completion only when the chat shows it. A generic offer or vague referral with no usable path is insufficient. When earlier help failed materially and that failure remains uncorrected, apply the lower score even if a transfer is later offered. Keep 4 for an otherwise adequate answer followed by silence or a routine external action.
+   - **5:** Very satisfied. The main request is fully and clearly addressed with no material unresolved part, and either the user subsequently shows positive acceptance or the assistant supplies a complete, direct and usable answer that requires no further explanation from the assistant. A complete factual answer, a clear process explanation or specific workable instructions can qualify for 5 without a thank-you or confirmation of completion. Do not require enthusiastic language. Do not use 5 for generic advice, an unresolved handover or an answer the user says did not help.
+   - Prefer 4 over 3 for useful assistance with only minor or uncertain gaps. Prefer 5 over 4 when the main answer is clear and complete. Reserve 3 and below for concrete shortcomings, not imagined dissatisfaction.
+   - Consider the user's initial frustration only if the assistant made it worse. Do not invent a user reaction, completed action or confirmed outcome. Describe useful assistance and any assumed resolution accurately in the score reason.
 
 3. **Provide Reason for CSAT Score**
    Write a succinct one-sentence justification (`ai_csat_reason`) for the CSAT score assigned.
@@ -136,7 +133,7 @@ The output must be in JSON with the following fields:
 - The CSAT score should be consistent with the user's satisfaction level at the conclusion of the conversation.
 ```
 
-This means you get an AI CSAT score for 100% of conversations (instead of the usual 2-10%) to give you a much more accurate representation of your AI agent’s performance.
+Conversations that do not meet the eligibility rules above receive no score. Your dashboard's AI CSAT percentage is the share of scored conversations rated 4 or 5.
 
 You can view your AI CSAT score in the Dashboard and for each individual topic and conversation by clicking on the respective conversation.
 
